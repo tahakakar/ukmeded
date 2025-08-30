@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="input.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  .session-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        input[type="checkbox"]:checked ~ .session-details {
+            max-height: 500px;
+        }
+        .session-type-1 { border-left: 4px solid #3B82F6; }
+        .session-type-2 { border-left: 4px solid #10B981; }
+        .session-type-3 { border-left: 4px solid #F59E0B; }
+        .session-type-4 { border-left: 4px solid #EF4444; }
+        
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button.active {
+            background-color: #3B82F6;
+            color: white;
+        }
+        </style>
+ <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+ <section class="relative w-[1260px] h-[150px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600">
+
+    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
+    
+    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
+    
+    <nav class="absolute top-[32px] left-[48px] w-[1175px] h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 mr-[18px] z-20">
+      
+      <div class="flex items-center">
+        <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold"><img src="mainogo1.png" alt=""></div>
+      </div>
+
+      <ul class="flex space-x-8 text-white font-medium">
+        <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
+        <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">upoming conferences</a></li>
+        <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">past conferences</a></li>
+        <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">gallery</a></li>
+        <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact us</a></li>
+      </ul>
+      <a href="registerationpage.html" class="bg-blue-600 h-[54px] flex justify-center items-center text-white px-6  rounded-full font-semibold hover:bg-transparent hover:text-blue-500 border border-blue-500 transition-normal">
+        Register Now
+      </a>
+    </nav>
+</section>
+ <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800"><span class="text-blue-500">Conference</span> Schedule</h2>
+            <p class="text-gray-600 mt-2">Two days of learning and networking</p>
+        </div>
+        
+        <!-- Day Tabs -->
+        <div class="flex justify-center mb-8">
+            <div class="inline-flex rounded-md shadow-sm" role="group">
+                <button type="button" class="tab-button py-2 px-6 text-sm font-medium rounded-l-lg border border-blue-500 active" data-day="day1">
+                    Day 1 (June 13)
+                </button>
+                <button type="button" class="tab-button py-2 px-6 text-sm font-medium rounded-r-md border border-blue-500" data-day="day2">
+                    Day 2 (June 14)
+                </button>
+            </div>
+        </div>
+        
+        <!-- Day 1 Content -->
+        <div id="day1" class="tab-content active">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <!-- Header -->
+                <div class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
+                    <div class="p-4 text-center font-[Poppins]">Time</div>
+                    <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
+                </div>
+                
+                <!-- Registration -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                    <div class="p-4 text-center font-medium font-[Poppins]">8:15</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Registration</h3>
+                    </div>
+                </div>
+                
+                <!-- Welcome Note -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                    <div class="p-4 text-center font-medium font-[Poppins]">8:55</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Welcome Note</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust<br>
+                            Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, King's College Hospital NHS Foundation Trust
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FOOT & ANKLE SURGERY 1 -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">9:00 - 11:00</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">FOOT & ANKLE SURGERY 1</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Session Chairs: Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital King's College Hospital NHS Foundation Trust; TBC
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:00 - Updates in the Minimally Invasive Treatment of Insertional Heel Pain</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Tom Lewis, Trauma and Orthopaedic Surgery Specialty Trainee, NHS</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:10 - Community Assessment, Management and Referral of Rapidly Progressing Collapsing Foot in a Diabetic</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Venu Kavarthapu, Consultant Orthopaedic Surgeon, King's College Hospital, London</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:20 - Minimally Invasive Treatment of Calcaneal Fracture</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Raju Ahluwalia, Consultant Foot and Ankle Orthopaedic Surgeon, King's College Hospital, London</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:30 - Novel Techniques in the Management of Foot Injuries (or Pilon or Syndesmosis)</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Lucky Jeyaseelan, Consultant Trauma and Orthopaedic Surgeon, Barts Bone & Joint Health, The Royal London Hospital</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:40 - Lateral Microinstability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Francesc Malagelada, Consultant Orthopaedic Surgeon, Barts Health NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:50 - What About the Deltoid? An Update on Medial and Rotational Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:00 - Q&A</h4>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:10 - The Use of Force Plates in Rehabilitation After Sports Injuries</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Tom Cornish, Clinic Director and Specialist Musculo-Skeletal Osteopath, PUREFORM CLINIC</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:20 - The Conservative Treatment of Metatarsalgia in Sports</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Liam Stapleton, Specialist in Podiatric Sports Medicine, Harley Street Specialist Hospital, London</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:30 - Total Ankle Replacement - State of the Art - When to Replace?</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Amit Patel, Consultant Trauma & Orthopaedic Surgeon (Foot & Ankle), Barts NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:40 - Making the Most Out of Clinical Practice Using Outcome Measures</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Tom Lewis, Trauma and Orthopaedic Surgery Specialty Trainee, NHS</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:50 - Q&A Round</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Morning Refreshments -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">11:00</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Morning Refreshments and Coffee Break</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Workshop by Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust (Representing Novastep Ortho)
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Elbow Session Instability Forum -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">11:30 - 13:00</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">Elbow Session Instability Forum</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Chair: Kishan Gokaraju, Consultant Orthopaedic Surgeon (Upper Limb), King's College Hospital NHS Foundation Trust, London
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:30-11:40 - Elbow Anatomy</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Kishan Gokaraju, Consultant Orthopaedic Surgeon (Upper Limb), King's College Hospital NHS Foundation Trust, London</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:40-11:55 - Mechanisms & Patterns of Acute Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Rouin Amirfeyz, Consultant Orthopaedic Surgeon (Hand & Elbow), University Hospitals Bristol NHS Foundation Trust, Bristol</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:55-12:10 - Management of Acute Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Karthik Karuppaiah, Consultant Orthopaedic Surgeon (Upper Limb), King's College Hospital NHS Foundation Trust, London</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:10-12:25 - Chronic Elbow Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Prof Pieter Caekebeke, Consultant Orthopaedic Surgeon (Elbow), Ziekenhuis Oost-Limburg (ZOL), Genk, Belgium</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:25-12:40 - Elbow Rehabilitation in Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Val Jones, Consultant Orthopaedic Surgeon (Physiotherapy), Sheffield Teaching Hospitals NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:40-12:55 - Complications of Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Livio Di Mascio, Consultant Orthopaedic Surgeon (Shoulder), Elbow & Hand, BartsHealth NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:55-13:00 - Q&E</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Hand & Wrist 1 (Parallel Session) -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-3">
+                            <div class="p-4 text-center font-medium font-[Poppins]">11:15 - 12:40</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">Hand & Wrist 1 (Parallel Session)</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Session Chairs: Aanchal Jain, Consultant Upper Limb and Trauma, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust; 
+                                    Najab Ellahee, Consultant in Trauma & Orthopaedic Surgery, Epsom & St Helier NHS Trust
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:15 - Thumb Carpometacarpal Osteoarthritis</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Karthik Karrupiah, Consultant Orthopaedic Surgeon, Kings College Hospital</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:35 - Assessment and Management of SLAC/SNAC Wrist</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Alex Bolt, Hand & Wrist Consultant, Pulvertaft Hand Unit, Royal Derby Hospital</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:55 - Post Operative Therapy Principles and Protocols</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Christy Fowler, Advanced Practice Hand Therapist, Guy's and St Thomas' NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:10 - Wrist OA and Keinboch's</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Najab Ellahee, Consultant in Trauma & Orthopaedic Surgery, Epsom & St Helier NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:30 - Q&A Round</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Lunch -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">13:00</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Lunch | Networking Break</h3>
+                        <p class="text-sm text-gray-600 mt-1">Lunch and Poster Presentation | One-to-One Networking Meetings</p>
+                    </div>
+                </div>
+                
+                <!-- Shoulder Session -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">13:30 - 15:15</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">Shoulder Session</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Session Chairs: Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, Kings College Hospital NHS Foundation Trust;
+                                    Nick Little, Consultant Orthopaedic Shoulder and Upper Limb Surgeon, Epsom & St Helier University NHS Trust
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">13:30 - Assessment of Shoulder Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Henry Colaco, Consultant Shoulder & Elbow, Hand & Wrist Surgeon, Candover Clinic</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">13:45 - Arthroscopic Stabilisation of Anterior Shoulder Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Vipul Patel, Medical Director, South West London Elective Orthopaedic Centre</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">14:00 - Open Bone Transfer for Anterior Shoulder Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Joydeep Sinha, Consultant Orthopaedic Surgeon, King's College Hospital NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">14:15 - Arthroscopic Bone Transfer for Anterior Shoulder Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Duncan Tennant, Consultant Orthopaedic Surgeon, St. George's Hospital</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">14:45 - Management of Posterior Shoulder Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Nick Little, Consultant Orthopaedic Shoulder and Upper Limb Surgeon, Epsom & St Helier University NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">15:00 - Complications of Shoulder Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Livio Di Mascio, Consultant Orthopaedic Surgeon in Shoulder, Elbow & Hand, Barts Health NHS Trust</p>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Afternoon Refreshments -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">15:15</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Afternoon Refreshments and Coffee Break</h3>
+                    </div>
+                </div>
+                
+                <!-- Hip/Knee 1 -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">15:30 - 17:15</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">Hip/Knee 1</h3>
+                                <p class="text-sm text-gray-600 mt-1">Session Chairs: TBC</p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">15:30 - Periarticular Fractures around Knee</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Ash Vasireddy, Consultant Trauma Lead and Orthopaedic Surgeon, KCH NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">15:45 - Revision Knee Replacement</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Alex Charalambous, Consultant Orthopaedic Surgeon, Guy's and St Thomas' NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">16:00 - Unicompartmental Knee Replacement and Day Case Surgery</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Luke Jones, Consultant Knee Surgeon, Chelsea and Westminster Hospital NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">16:15 - Joint Preservation and Role of Osteotomy</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Raghbir Khakha, Consultant Trauma and Orthopaedic Knee Surgeon, Guy's and St Thomas' NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">16:30 - Primary Total Hip Replacement and Day Case Surgery</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Dominic Davenport, Consultant Hip and Knee Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">16:45 - Complex Primary Total Hip Replacement</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Tom White, Consultant Orthopaedic Surgeon, Lewisham and Greenwich NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">17:00 - Periprosthetic Fractures</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Mohit Bansal, Consultant Hip and Knee Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">17:15 - Q&A Round</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Closing Remarks -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                    <div class="p-4 text-center font-medium font-[Poppins]">17:30</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Closing Remarks by Meeting Chairs</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust<br>
+                            Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, Kings College Hospital NHS Foundation Trust
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Drinks Reception -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">17:30</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Drinks Reception and Networking</h3>
+                    </div>
+                </div>
+                
+                <!-- Dinner -->
+                <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">19:30</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Dinner</h3>
+                        <p class="text-sm text-gray-600 mt-1">End of Day 1</p>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        <!-- Day 2 Content -->
+        <div id="day2" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <!-- Header -->
+                <div class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
+                    <div class="p-4 text-center font-[Poppins]">Time</div>
+                    <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
+                </div>
+                
+                <!-- Registration -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                    <div class="p-4 text-center font-medium font-[Poppins]">8:15</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Registration</h3>
+                    </div>
+                </div>
+                
+                <!-- Welcome Note -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                    <div class="p-4 text-center font-medium font-[Poppins]">8:55</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Welcome Note</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust<br>
+                            Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, King's College Hospital NHS Foundation Trust
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FOOT & ANKLE 2 -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">9:00 - 10:00</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">FOOT & ANKLE 2</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Session Chairs: Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust; TBC
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:00 - Understanding how far we've come in foot and ankle, moving away from old principles</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Ed Gee, Consultant Foot and Ankle Surgeon, Salford Royal Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:10 - Ankle Replacement - Does it Work?</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Razi Zaidi, Orthopaedic Consultant, NHS</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:20 - Advanced Application of Shockwave Therapy in Foot and Ankle Pathologies</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Benoy Matthews, Specialist Physiotherapist - Lower Limb (Extended Scope Practitioner), NHS England</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:30 - The use of biologic injections to aid rehabilitation from tendinopathy and injury</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Suresh Sudula, Musculoskeletal Specialist & Consultant Physiotherapist, MSK Ultrasound & MSK | Regenerative Medicine</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:40 - Apophysitis syndromes in the adolescent: the beginning, middle and end?</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Jenny Strickland, Principal Physiotherapist, Bodyworks Sports Injury & Physiotherapy</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">9:50 - The Minimally Invasive Treatment of Bunionette Deformities</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:00 - Q&A Round</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- HAND & WRIST 2 -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">10:15 - 11:30</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">HAND & WRIST 2</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Session Chairs: Aanchal Jain, Consultant Upper Limb and Trauma, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust;
+                                    Najab Ellahee, Consultant in Trauma & Orthopaedic Surgery, Epsom & St Helier NHS Trust
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:15 - Perilunate dislocation</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Ravi Mallina, Consultant Hand Surgeon, Croydon Health Services NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:30 - Scapholunate instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Shamim Umarji, Clinical Director for Surgery, Consultant Trauma & Orthopaedic Surgeon, St George's NHSFT, London</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">10:45 - Ulnar sided wrist pain and DRUJ instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Ramon Tahmassebi, Hand Wrist and Elbow Surgeon, Cleveland Clinic London</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:15 - Hand Therapy TFCC Rehab</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Jennifer Parr, Specialist Hand Therapist & Hands Service Lead, Six Physio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Morning Refreshments -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">11:30</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Morning Refreshments and Coffee Break</h3>
+                    </div>
+                </div>
+                
+                <!-- ELBOW -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">11:45 - 12:45</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">ELBOW</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Session Chairs: Kishan Gokaraju, Consultant Upper Limb and Trauma, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust;
+                                    Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, King's College Hospital NHS Foundation Trust
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">11:45 - Biceps & Triceps Injuries</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, King's College Hospital NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:00 - Tennis & Golfers Elbow (Lateral & Medial Epicondylitis)</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Andrew Wright, Consultant Elbow & Shoulder Surgeon, Wrightington, Wigan and Leigh NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:15 - Elbow Stiffness</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Andrew White, Consultant Shoulder & Elbow Surgeon, Peterborough City Hospital</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">12:30 - Elbow Arthritis & Arthroplasty</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Sam Vollans, Consultant Shoulder & Elbow Surgeon, Leeds Teaching Hospitals NHS Trust</p>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Lunch -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">12:45</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Lunch and Poster Presentation | One-to-One Networking Meetings</h3>
+                    </div>
+                </div>
+                
+                <!-- ELBOW CONTINUED -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">13:45 - 14:45</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">ELBOW CONTINUED</h3>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">13:45 - Elbow Instability - Mechanism & Assessment</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Lee Van Rensburg, Consultant Shoulder & Elbow Surgeon, Cambridge University Hospitals NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">14:00 - Elbow Instability – Management</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Lee Van Rensburg, Consultant Shoulder & Elbow Surgeon, Cambridge University Hospitals NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">14:15 - Rehabilitation Following Elbow Surgery</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Rachel O'Connell, Specialist Physiotherapist, Royal Free London NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">14:30 - Q&A Round</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Afternoon Refreshments -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">14:45</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Afternoon Refreshments and Coffee Break</h3>
+                    </div>
+                </div>
+                
+                <!-- Shoulder 2 -->
+                <div class="border-b border-gray-100">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden session-toggle">
+                        <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
+                            <div class="p-4 text-center font-medium font-[Poppins]">15:00 - 16:30</div>
+                            <div class="p-4 col-span-4 font-[Poppins]">
+                                <h3 class="font-semibold">Shoulder 2</h3>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Session Chairs: Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, King's College Hospital NHS Foundation Trust;
+                                    Nick Little, Consultant Orthopaedic Shoulder and Upper Limb Surgeon, Epsom & St Helier University NHS Trust
+                                </p>
+                                <div class="text-blue-500 text-sm mt-2 flex gap-1">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg> Click to see full session details
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-details bg-blue-50">
+                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                                <!-- Session items -->
+                                <div class="mt-3">
+                                    <h4 class="font-medium">15:00 - Rotator Cuff Tears: Repair or Reconstruction?</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Tom Abbott, Consultant Orthopaedic Surgeon, Royal Berkshire Hospital</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">15:15 - Shoulder Instability - Management of Posterior Instability</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Simon Hamer, Consultant Orthopaedic Surgeon, Oxford University Hospitals NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">15:30 - Shoulder Arthroscopy: Indications and Techniques</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Nicholas Malindretos, Consultant Orthopaedic Surgeon, North Middlesex University Hospital</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">15:45 - Subacromial Pain Syndrome: Treatment Options</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Michael Parker, Consultant Orthopaedic Surgeon, St. George's University Hospitals NHS Foundation Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">16:00 - Complex Shoulder Surgery – Planning and Execution</h4>
+                                    <p class="text-sm text-gray-600">Speaker: Kieran Duffy, Consultant Orthopaedic Surgeon, University Hospital of North Midlands NHS Trust</p>
+                                </div>
+                                <div class="mt-3">
+                                    <h4 class="font-medium">16:15 - Q&A Round</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Closing Remarks -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                    <div class="p-4 text-center font-medium font-[Poppins]">16:30</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Closing Remarks by Meeting Chairs</h3>
+                        <p class="text-sm text-gray-600 mt-1">
+                            Robbie Ray, Orthopaedic Surgeon, Princess Royal University Hospital, King's College Hospital NHS Foundation Trust<br>
+                            Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, King's College Hospital NHS Foundation Trust
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Drinks Reception -->
+                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">16:30</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Drinks Reception and Networking</h3>
+                    </div>
+                </div>
+                
+                <!-- Dinner -->
+                <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
+                    <div class="p-4 text-center font-medium font-[Poppins]">19:30</div>
+                    <div class="p-4 col-span-4 font-[Poppins]">
+                        <h3 class="font-semibold">Dinner</h3>
+                        <p class="text-sm text-gray-600 mt-1">End of Day 2</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <!-- Legend -->
+        <div class="mt-8 bg-white rounded-2xl shadow-lg p-6">
+            <h3 class="font-semibold text-gray-800 mb-3 font-[Poppins]">Schedule Legend</h3>
+            <div class="flex flex-wrap gap-4">
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-blue-500 mr-2"></div>
+                    <span class="text-sm font-[Poppins]">Scientific Sessions</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-green-500 mr-2"></div>
+                    <span class="text-sm font-[Poppins]">Breaks & Networking</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-yellow-500 mr-2"></div>
+                    <span class="text-sm font-[Poppins]">Parallel Sessions</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-4 h-4 bg-red-500 mr-2"></div>
+                    <span class="text-sm font-[Poppins]">Special Events</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = button.dataset.day;
+                    
+                    // Update buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Update contents
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+            
+            // Session toggle functionality
+            const sessionToggles = document.querySelectorAll('.session-toggle');
+            
+            sessionToggles.forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    const details = this.parentNode.querySelector('.session-details');
+                    const icon = this.parentNode.querySelector('.fa-chevron-down');
+                    
+                    if (this.checked) {
+                        if (icon) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    } else {
+                        if (icon) icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+
+<footer class="relative w-[1260px] h-[460px] bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-12 py-10 text-white font-[Helvetica] overflow-hidden">
+  <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[1200px] opacity-8"></div>
+<div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[940px] h-[240px] bg-white rounded-t-[1200px] opacity-8"></div>
+<div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[990px] h-[280px] bg-white rounded-t-[1200px] opacity-8"></div>
+<div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[1040px] h-[320px] bg-white rounded-t-[1200px] opacity-8"></div>
+
+
+
+  <div class="grid grid-cols-3 gap-1 relative z-10">
+    
+    <div>
+      <div class="w-[101px] h-[101px] mb-6">
+        <img src="1031bb7545f4365de670a156cac68e32cd2aecf8.png" alt="Logo" class="w-full h-full object-contain">
+      </div>
+      <p class="w-[351px] h-[57px] font-[Inter] font-normal text-[16px] leading-[160%]">
+        At Edux, we provide top-tier E-learning to the services to meet all your educational needs. 
+        Whether you're a student.
+      </p>
+      <div class="flex space-x-4 mt-10">
+      
+        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2a1 1 0 0 1 .993.883L19 3v4a1 1 0 0 1-.883.993L18 8h-3v1h3a1 1 0 0 1 .991 1.131l-.02.112-1 4a1 1 0 0 1-.858.75L17 15h-2v6a1 1 0 0 1-.883.993L14 22h-4a1 1 0 0 1-.993-.883L9 21v-6H7a1 1 0 0 1-.993-.883L6 14v-4a1 1 0 0 1 .883-.993L7 9h2V8a6 6 0 0 1 5.775-5.996L15 2h3z"/></svg>
+        </div>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M14.058 3.41c-1.807.767-2.995 2.453-3.056 4.38v.182l-.243-.023c-2.392-.269-4.498-1.512-5.944-3.531a1 1 0 0 0-1.782.377c-.719 1.485-1.19 3.29-1.017 5.203.283 2.263 1.5 4.215 3.779 5.679l.173.107-.081.043c-1.315.663-2.518.952-3.827.9-1.056-.04-1.446 1.372-.518 1.878 3.598 1.961 7.461 2.566 10.792 1.6 4.06-1.18 7.152-4.223 8.335-8.433.238-.993.372-2.006.401-3.024l.003-.332.393-.779.44-.862.214-.434.118-.247c.265-.565.456-1.033.574-1.43.22-.593-.166-1.358-.941-1.358a.997.997 0 0 0-.231.057l-.086.038a7.46 7.46 0 0 1-.88.36l-.356.115-.271.08-.772.214c-1.336-1.118-3.144-1.254-5.012-.554z"/></svg>
+        </div>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zM8 10a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1m6 0a3 3 0 0 0-1.293.293A1 1 0 0 0 12 11v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0-3-3M8 7a1 1 0 0 0-1 .883V8a1 1 0 0 0 2 0v-.117A1 1 0 0 0 8 7"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="ml-[130px] mt-[78px] font-[Poppins]">
+      <h3 class="text-[19.2px] font-bold mb-4">Get In Touch</h3>
+      <p class="mb-6 text-[14.4px]">1st Floor Heathlaid House, Marlborough Hill, HA1 1UD, Harrow, UK</p>
+      <p class="mb-6 text-[14.4px]">contact@ukneeded.com</p>
+      <p>+44 7745217153 <br> +44 7885552064</p>
+    </div>
+
+    <div class="ml-[200px] mt-[78px] font-[Poppins]">
+      <h3 class="text-[19.2px] font-bold mb-4">Help</h3>
+      <ul class="space-y-4 text-[14.4px]">
+        <li><a href="#" class="hover:underline">Upcoming Conferences</a></li>
+        <li><a href="#" class="hover:underline">Past Conferences</a></li>
+        <li><a href="#" class="hover:underline">About Us</a></li>
+        <li><a href="#" class="hover:underline">Blogs</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="mt-10 border-t border-white/40 pt-4 flex justify-between text-sm relative z-10">
+    <p>©2025 Copyright All Rights Reserved.</p>
+    <div class="flex space-x-6 mr-[90px]">
+      <a href="#" class="hover:underline">Privacy Policy</a>
+      <a href="#" class="hover:underline">Term and Conditions</a>
+    </div>
+  </div> 
+</footer>
+</body>
+</html>

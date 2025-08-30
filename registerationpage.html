@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="input.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+   .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .policy-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        input[type="checkbox"]:checked ~ .policy-content {
+            max-height: 500px;
+        }
+        </style>
+          <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#0EA5E9',
+                        accent: '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+ <section class="relative w-[1260px] h-[150px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600">
+
+    <div class="absolute bottom-[-100px] left-11/12 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
+    
+    <div class="absolute bottom-[-100px] left-10/12 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
+    
+    <nav class="absolute top-[32px] left-[48px] w-[1175px] h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 mr-[18px] z-20">
+      
+      <div class="flex items-center">
+        <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold"><img src="mainogo1.png" alt=""></div>
+      </div>
+
+      <ul class="flex space-x-8 text-white font-medium">
+        <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
+        <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">upoming conferences</a></li>
+        <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">past conferences</a></li>
+        <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">gallery</a></li>
+        <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact us</a></li>
+      </ul>
+      <a href="registerationpage.html" class="bg-blue-600 h-[54px] flex justify-center items-center text-white px-6  rounded-full font-semibold hover:bg-transparent hover:text-blue-500 border border-blue-500 transition-normal">
+        Register Now
+      </a>
+    </nav>
+</section>
+
+  <section class="max-w-6xl mx-auto px-6 py-16 font-[Poppins]">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800"><span class="text-blue-500">London Orthopaedic Meeting</span> Registration</h2>
+            <p class="text-gray-600 mt-2">Oct 15–16, 2025</p>
+        </div>
+
+        <!-- Registration Cards -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- Delegate Registration -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border-t-4 border-primary">
+                <div class="p-8">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-6">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users-group"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Register As <span class="text-blue-500">Delegates</span></h3>
+                    <p class="text-gray-600 mb-6">
+                        Join industry leaders, innovators, and professionals at the forefront of change. 
+                        Gain valuable insights, network with key stakeholders, and explore new opportunities at our event.
+                    </p>
+                    <a href="deleregister.html" class="inline-block bg-primary hover:bg-transparent border-2 border-blue-500 hover:text-blue-500 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                        Register Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sponsor Registration -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border-t-4 border-primary">
+                <div class="p-8">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-6">
+                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-heart-handshake"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /><path d="M12 6l-3.293 3.293a1 1 0 0 0 0 1.414l.543 .543c.69 .69 1.81 .69 2.5 0l1 -1a3.182 3.182 0 0 1 4.5 0l2.25 2.25" /><path d="M12.5 15.5l2 2" /><path d="M15 13l2 2" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Register As <span class="text-blue-500">Sponsor</span></h3>
+                    <p class="text-gray-600 mb-6">
+                        Showcase your brand, gain premium visibility, and connect with industry leaders. 
+                        Maximize your impact and strengthen your market presence today!
+                    </p>
+                    <a href="sponregister.html" class="inline-block bg-primary hover:bg-transparent border-2 border-blue-500 hover:text-blue-500 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                        Register Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy Section -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Event Information & Policies</h3>
+                
+                <!-- Catering Information -->
+                <div class="bg-blue-50 rounded-xl p-6 mb-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-utensils text-secondary text-2xl mr-4 mt-1"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Complimentary Catering</h4>
+                            <p class="text-gray-700">
+                                We are pleased to offer complimentary tea, coffee, snacks, and a hot lunch for all registered delegates at the London Orthopaedic Meeting.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Policy Accordion -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <label class="cursor-pointer">
+                        <input type="checkbox" class="hidden policy-toggle">
+                        <div class="flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <div class="flex items-center">
+                                 <h4 class="text-lg font-semibold text-gray-800">No-Show & Late Cancellation Policy</h4>
+                            </div>
+                            <div class="text-primary">
+                               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+                            </div>
+                        </div>
+                        <div class="policy-content">
+                            <div class="p-6 border-t border-gray-200">
+                                <p class="text-gray-700 mb-4">
+                                    Due to the high cost of catering in central London, we kindly ask all participants to be mindful of their attendance. 
+                                    If you need to cancel your registration, please do so at least 48 hours before the event to allow us to adjust catering arrangements accordingly.
+                                </p>
+                                <p class="text-gray-700 mb-4">
+                                    Delegates who cancel less than 48 hours before the event or fail to attend on the days they have registered for will be charged £50 per day they signed up for. 
+                                    This policy helps ensure that resources are used efficiently and that spaces are available for those who wish to attend.
+                                </p>
+                                <p class="text-gray-700">
+                                    We appreciate your understanding and cooperation. If you have any questions or need to cancel your registration, please contact us at 
+                                    <a href="mailto:contact@ukmeded.com" class="text-primary hover:underline font-medium">contact@ukmeded.com</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Additional Information -->
+                <div class="mt-8 grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-calendar-alt text-secondary text-xl mr-4 mt-1"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Event Dates</h4>
+                            <p class="text-gray-600">Oct 15–16, 2025</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-clock text-secondary text-xl mr-4 mt-1"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Cancellation Deadline</h4>
+                            <p class="text-gray-600">48 hours before the event</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-secondary text-xl mr-4 mt-1"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Late Cancellation Fee</h4>
+                            <p class="text-gray-600">£50 per registered day</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-envelope text-secondary text-xl mr-4 mt-1"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Contact Email</h4>
+                            <p class="text-gray-600">contact@ukmeded.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-12">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Ready to Join Us?</h3>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                Don't miss this opportunity to be part of the premier orthopaedic event of the year. 
+                Register today to secure your spot among industry leaders and innovators.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-primary hover:bg-transparent border-2 border-blue-500 hover:text-blue-500 text-white font-medium py-3 px-8 rounded-lg transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-user-graduate mr-2"></i> Register as Delegate
+                </a>
+                <a href="#" class="bg-primary hover:bg-transparent border-2 border-blue-500 hover:text-blue-500 text-white font-medium py-3 px-8 rounded-lg transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-handshake mr-2"></i> Register as Sponsor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Policy toggle functionality
+            const policyToggles = document.querySelectorAll('.policy-toggle');
+            
+            policyToggles.forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    const icon = this.parentNode.querySelector('.fa-chevron-down');
+                    
+                    if (this.checked) {
+                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    } else {
+                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+  
+<footer class="relative w-[1260px] h-[460px] bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-12 py-10 text-white font-[Helvetica] overflow-hidden">
+  <div class="absolute bottom-[-110px] left-11/12 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[1200px] opacity-8"></div>
+<div class="absolute bottom-[-110px] left-11/12 transform -translate-x-1/2 w-[940px] h-[240px] bg-white rounded-t-[1200px] opacity-8"></div>
+<div class="absolute bottom-[-110px] left-11/12 transform -translate-x-1/2 w-[990px] h-[280px] bg-white rounded-t-[1200px] opacity-8"></div>
+<div class="absolute bottom-[-110px] left-11/12 transform -translate-x-1/2 w-[1040px] h-[320px] bg-white rounded-t-[1200px] opacity-8"></div>
+
+
+
+  <div class="grid grid-cols-3 gap-1 relative z-10">
+    
+    <div>
+      <div class="w-[101px] h-[101px] mb-6">
+        <img src="1031bb7545f4365de670a156cac68e32cd2aecf8.png" alt="Logo" class="w-full h-full object-contain">
+      </div>
+      <p class="w-[351px] h-[57px] font-[Inter] font-normal text-[16px] leading-[160%]">
+        At Edux, we provide top-tier E-learning to the services to meet all your educational needs. 
+        Whether you're a student.
+      </p>
+      <div class="flex space-x-4 mt-10">
+      
+        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2a1 1 0 0 1 .993.883L19 3v4a1 1 0 0 1-.883.993L18 8h-3v1h3a1 1 0 0 1 .991 1.131l-.02.112-1 4a1 1 0 0 1-.858.75L17 15h-2v6a1 1 0 0 1-.883.993L14 22h-4a1 1 0 0 1-.993-.883L9 21v-6H7a1 1 0 0 1-.993-.883L6 14v-4a1 1 0 0 1 .883-.993L7 9h2V8a6 6 0 0 1 5.775-5.996L15 2h3z"/></svg>
+        </div>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M14.058 3.41c-1.807.767-2.995 2.453-3.056 4.38v.182l-.243-.023c-2.392-.269-4.498-1.512-5.944-3.531a1 1 0 0 0-1.782.377c-.719 1.485-1.19 3.29-1.017 5.203.283 2.263 1.5 4.215 3.779 5.679l.173.107-.081.043c-1.315.663-2.518.952-3.827.9-1.056-.04-1.446 1.372-.518 1.878 3.598 1.961 7.461 2.566 10.792 1.6 4.06-1.18 7.152-4.223 8.335-8.433.238-.993.372-2.006.401-3.024l.003-.332.393-.779.44-.862.214-.434.118-.247c.265-.565.456-1.033.574-1.43.22-.593-.166-1.358-.941-1.358a.997.997 0 0 0-.231.057l-.086.038a7.46 7.46 0 0 1-.88.36l-.356.115-.271.08-.772.214c-1.336-1.118-3.144-1.254-5.012-.554z"/></svg>
+        </div>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zM8 10a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1m6 0a3 3 0 0 0-1.293.293A1 1 0 0 0 12 11v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0-3-3M8 7a1 1 0 0 0-1 .883V8a1 1 0 0 0 2 0v-.117A1 1 0 0 0 8 7"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="ml-[130px] mt-[78px] font-[Poppins]">
+      <h3 class="text-[19.2px] font-bold mb-4">Get In Touch</h3>
+      <p class="mb-6 text-[14.4px]">1st Floor Heathlaid House, Marlborough Hill, HA1 1UD, Harrow, UK</p>
+      <p class="mb-6 text-[14.4px]">contact@ukneeded.com</p>
+      <p>+44 7745217153 <br> +44 7885552064</p>
+    </div>
+
+    <div class="ml-[200px] mt-[78px] font-[Poppins]">
+      <h3 class="text-[19.2px] font-bold mb-4">Help</h3>
+      <ul class="space-y-4 text-[14.4px]">
+        <li><a href="#" class="hover:underline">Upcoming Conferences</a></li>
+        <li><a href="#" class="hover:underline">Past Conferences</a></li>
+        <li><a href="#" class="hover:underline">About Us</a></li>
+        <li><a href="#" class="hover:underline">Blogs</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="mt-10 border-t border-white/40 pt-4 flex justify-between text-sm relative z-10">
+    <p>©2025 Copyright All Rights Reserved.</p>
+    <div class="flex space-x-6 mr-[90px]">
+      <a href="#" class="hover:underline">Privacy Policy</a>
+      <a href="#" class="hover:underline">Term and Conditions</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
