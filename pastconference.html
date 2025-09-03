@@ -12,57 +12,96 @@
 </style>
 </head>
 <body>
- <section class="relative w-[1260px] h-[150px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600">
+<section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
-    
-    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
-    
-    <nav class="absolute top-[32px] left-[48px] w-[1175px] h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 mr-[18px] z-20">
-      
-      <div class="flex items-center">
-        <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold"><img src="mainogo1.png" alt=""></div>
+  <!-- White background curves -->
+  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
+  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
+
+  <!-- NAVBAR -->
+  <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
+
+    <!-- Logo -->
+    <div class="flex items-center">
+      <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
+        <img src="mainogo1.png" alt="">
       </div>
+    </div>
 
-      <ul class="flex space-x-8 text-white font-medium">
-        <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
-        <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
-        <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">upoming conferences</a></li>
-        <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">past conferences</a></li>
-        <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">gallery</a></li>
-        <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact us</a></li>
-      </ul>
-      <a href="registerationpage.html" class="bg-blue-600 h-[54px] flex justify-center items-center text-white px-6  rounded-full font-semibold hover:bg-transparent hover:text-blue-500 border border-blue-500 transition-normal">
-        Register Now
-      </a>
-    </nav>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
+      <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
+      <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Upcoming Conferences</a></li>
+      <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Past Conferences</a></li>
+      <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Gallery</a></li>
+      <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
+    </ul>
+
+    <!-- Mobile Menu -->
+    <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
+      <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
+      <li><a href="conference.html" class="hover:text-blue-500 uppercase">Upcoming Conferences</a></li>
+      <li><a href="pastconference.html" class="hover:text-blue-500 uppercase">Past Conferences</a></li>
+      <li><a href="gellery.html" class="hover:text-blue-500 uppercase">Gallery</a></li>
+      <li><a href="contact.html" class="hover:text-blue-500 uppercase">Contact Us</a></li>
+      <li>
+        <a href="registerationpage.html" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-transparent border border-blue-600 hover:text-blue-600 transition">Register Now</a>
+      </li>
+    </ul>
+
+    <!-- Register Button (Desktop) -->
+    <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
+  </nav>
 </section>
+<script>
+  (function(){
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('hidden')) {
+        const inside = menu.contains(e.target);
+        const onBtn = btn.contains(e.target);
+        if (!inside && !onBtn) menu.classList.add('hidden');
+      }
+    });
+  })();
+</script>
 
-    <section class="hero-section w-[1260px] h-[500px] mx-auto mt-4 rounded-[48px] overflow-hidden flex items-center justify-center text-black">
-        <div class="text-center px-10">
+    <section class="hero-section w-full max-w-[1260px] h-auto lg:h-[500px] mx-auto mt-4 rounded-[48px] overflow-hidden flex items-center justify-center text-black px-4 sm:px-6">
+        <div data-aos="fade-up"   class="text-center px-10">
             <h1 class="text-[48px] font-[Poppins] font-bold mb-4"><span class="text-blue-500">1st Annual London</span> Orthopaedic Meeting</h1>
             <p class="text-xl font-[Poppins]  max-w-3xl mx-auto">Pushing the Boundaries and Leading the Way in Orthopaedic Advancements</p>
-            <div class="mt-8 flex justify-center space-x-4">
+            <div data-aos="fade-up"  class="mt-8 flex justify-center space-x-4">
                 <a href="#" class="border-2 border-blue-500 font-[Poppins]  hover:bg-white hover:text-primary px-8 py-3 rounded-full font-semibold">Learn More</a>
             </div>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-6 py-16 rounded-[48px] bg-[rgba(0,184,230,0.05)]">
+    <section class="w-full max-w-6xl mx-auto px-6 py-16 rounded-[48px] bg-[rgba(0,184,230,0.05)]">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Main Content -->
             <div class="lg:col-span-2">
-                <h2 class="text-3xl font-[Poppins] font-bold text-gray-800 mb-6">About the Conference</h2>
-                <p class="text-gray-700 font-[Poppins] mb-6">
+                <h2  data-aos="fade-up"  class="text-3xl font-[Poppins] font-bold text-gray-800 mb-6">About the Conference</h2>
+                <p  data-aos="fade-up"  class="text-gray-700 font-[Poppins] mb-6">
                  The field of surgery has been revolutionised by the introduction of new technologies and surgical techniques. A major breakthrough is the use of robotic systems like the MAKO system for knee replacements (robotic arm-assisted knee surgery). Consequently, MIS has emerged as the gold standard of care in numerous clinical specialties globally.
 
-We are pleased to announce the MarketsandMarkets London Orthopaedic Meeting, scheduled to take place on 13th-14th June 2024, in London, UK. This conference aims to provide a platform for surgeons, physicians, residents, clinical specialty nurses, and other medical professionals to gather and discuss the latest technological advancements, emerging trends, challenges, and future prospects in minimally invasive surgery. The focus will be on managing disorders related to Orthopaedics, ‘also with focus towards the FRCS’.
+                    We are pleased to announce the MarketsandMarkets London Orthopaedic Meeting, scheduled to take place on 13th-14th June 2024, in London, UK. This conference aims to provide a platform for surgeons, physicians, residents, clinical specialty nurses, and other medical professionals to gather and discuss the latest technological advancements, emerging trends, challenges, and future prospects in minimally invasive surgery. The focus will be on managing disorders related to Orthopaedics, ‘also with focus towards the FRCS’.
 
-Over the course of two days, attendees will have the opportunity to engage in expert keynote presentations and participate in breakthrough sessions. This scientific meeting will not only facilitate knowledge exchange but also enable networking among peers, ensuring participants stay informed about the most recent developments in the world of minimally invasive surgery.</p>
+                        Over the course of two days, attendees will have the opportunity to engage in expert keynote presentations and participate in breakthrough sessions. This scientific meeting will not only facilitate knowledge exchange but also enable networking among peers, ensuring participants stay informed about the most recent developments in the world of minimally invasive surgery.</p>
                 
                 
-                <h3 class="text-2xl font-bold font-[Poppins] text-gray-800 mt-10 mb-4">Key Topics</h3>
-                <ul class="grid grid-cols-2 gap-4 mb-8">
+                <h3  data-aos="fade-up"  class="text-2xl font-bold font-[Poppins] text-gray-800 mt-10 mb-4">Key Topics</h3>
+                <ul  data-aos="fade-up"  class="grid grid-cols-2 gap-4 mb-8">
                     <li class="flex items-center font-[Poppins]">
                         <i class="fas fa-check-circle  mr-2"></i>
                         <span>The Future of Minimally Invasive Surgery</span>
@@ -89,8 +128,8 @@ Over the course of two days, attendees will have the opportunity to engage in ex
                     </li>
                 </ul>
                 
-                <h3 class="text-2xl font-bold text-gray-800 mt-10 mb-4 font-[Poppins]">Who Should Attend</h3>
-                <div class="grid grid-cols-2 gap-6 mb-8">
+                <h3  data-aos="fade-up"  class="text-2xl font-bold text-gray-800 mt-10 mb-4 font-[Poppins]">Who Should Attend</h3>
+                <div data-aos="fade-up"   class="grid grid-cols-2 gap-6 mb-8">
                     <div class="bg-blue-200 p-4 rounded-lg">
                         <i class="fas fa-user-md text-3xl text-primary mb-2"></i>
                         <h4 class="font-semibold font-[Poppins]">Orthopaedic Surgeons</h4>
@@ -127,7 +166,7 @@ Over the course of two days, attendees will have the opportunity to engage in ex
             </div>
             
             <!-- Sidebar -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 h-fit sticky top-6">
+            <div  data-aos="fade-left"  class="bg-white rounded-2xl shadow-lg p-6 h-fit sticky top-6">
                 <h3 class="text-xl font-[Poppins] font-bold text-gray-800 mb-6 text-center ">Event Details</h3>
                 
                 <div class="space-y-4">
@@ -175,7 +214,7 @@ Over the course of two days, attendees will have the opportunity to engage in ex
                 </div>
                 
                 
-                <div class="mt-6 pt-6 border-t border-gray-200">
+                <div  data-aos="fade-left"  class="mt-6 pt-6 border-t border-gray-200">
                     <h4 class="font-semibold text-gray-700 mb-3 font-[Poppins]">Share This Event</h4>
                     <div class="flex space-x-3">
                         <a href="#" class="w-10 h-10 rounded-full bg-blue-300 flex items-center justify-center hover:text-blue-600 ">
@@ -200,14 +239,14 @@ Over the course of two days, attendees will have the opportunity to engage in ex
         </div>
     </section>
 
-<section class="max-w-6xl mx-auto px-6 py-16 bg-blue-50 rounded-[48px] mt-[60px]">
-        <div class="text-center mb-12">
+<section class="w-full max-w-6xl mx-auto px-6 py-16 bg-blue-50 rounded-[48px] mt-[60px]">
+        <div  data-aos="fade-up"  class="text-center mb-12">
             <h2 class="text-3xl font-[Poppins] font-bold"><span class="text-blue-500">Featured  </span>Speakers</h2>
             <p class="text-gray-600 mt-2 font-[Poppins] ">Learn from the leading experts in orthopaedic surgery</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
+            <div  data-aos="fade-left"  class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
                 <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-200 overflow-hidden">
                     <img src="pastspeakers/pics01.jpg" alt="Tom Lewis"  class="w-full h-full object-cover">
                 </div>
@@ -216,7 +255,7 @@ Over the course of two days, attendees will have the opportunity to engage in ex
                 <p class="text-gray-600 font-[Poppins] text-sm">NHS</p>
             </div>
             
-            <div class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
+            <div data-aos="fade-left"   class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
                 <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-200 overflow-hidden">
                     <img src="https://ukmeded.com/wp-content/uploads/2025/01/venu-kavarthapu.webp" alt="Venu Kavarthapu" class="w-full h-full object-cover">
                 </div>
@@ -225,7 +264,7 @@ Over the course of two days, attendees will have the opportunity to engage in ex
                 <p class="text-gray-600 font-[Poppins] text-sm">King's College Hospital,London</p>
             </div>
             
-            <div class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
+            <div data-aos="fade-left"   class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
                 <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-200 overflow-hidden">
                     <img src="pastspeakers/pics03.jpg" alt="Raju Ahluwalia" class="w-full h-full object-cover">
                 </div>
@@ -234,7 +273,7 @@ Over the course of two days, attendees will have the opportunity to engage in ex
                 <p class="text-gray-600  font-[Poppins] text-sm">King's College Hospital,London</p>
             </div>
             
-            <div class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
+            <div data-aos="fade-left"   class="speaker-card bg-white rounded-2xl p-6 text-center shadow-md">
                 <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-200 overflow-hidden">
                     <img src="pastspeakers/pics04.jpg" alt="Lucky Jeyaseelan" class="w-full h-full object-cover">
                 </div>
@@ -244,17 +283,17 @@ Over the course of two days, attendees will have the opportunity to engage in ex
             </div>
         </div>
         
-        <div class="text-center mt-10">
+        <div  data-aos="fade-up"  class="text-center mt-10">
             <a href="#" class="font-[Poppins]font-semibold hover:underline">View All Speakers <i class="fas fa-arrow-right ml-1"></i></a>
         </div>
     </section>
-    <section class="max-w-6xl mx-auto px-6 py-16">
-        <div class="text-center mb-12">
+    <section class="w-full max-w-6xl mx-auto px-6 py-16">
+        <div  data-aos="fade-up"  class="text-center mb-12">
             <h2 class="text-3xl  font-[Poppins] font-bold text-gray-800"><span class="text-blue-500">Conference</span> Schedule</h2>
             <p class="text-gray-600  font-[Poppins] mt-2">Two days of learning and networking</p>
         </div>
         
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div  data-aos="fade-left"  class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="border-b border-gray-200">
                 <div class="grid grid-cols-4 bg-blue-100 text-gray-800 font-semibold">
                     <div class="p-4 text-center">Time</div>
@@ -297,14 +336,14 @@ Over the course of two days, attendees will have the opportunity to engage in ex
                 </div>
             </div>
             
-            <div class="text-center py-6">
+            <div  data-aos="fade-up"  class="text-center py-6">
                 <a href="schedule.html" class="text-primary font-semibold hover:underline font-[Poppins]">Full Schedule <i class="fas fa-download ml-1"></i></a>
             </div>
         </div>
     </section>
-   <section class="w-[1260px] mx-auto px-6 py-16 mt-[60px] rounded-[48px] bg-[rgba(0,184,230,0.05)]">
+   <section class="w-full max-w-[1260px] mx-auto px-6 py-16 mt-[60px] rounded-[48px] bg-[rgba(0,184,230,0.05)]">
   <!-- Heading -->
-  <div class="text-center mb-12">
+  <div  data-aos="fade-up"  class="text-center mb-12">
     <h2 class="text-3xl font-bold font-[Poppins]">
       <span class="text-blue-500"> Our Valued </span> Sponsors
     </h2>
@@ -313,32 +352,32 @@ Over the course of two days, attendees will have the opportunity to engage in ex
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+  <div  data-aos="fade-left"  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 text-center">
   
     <div class="bg-white rounded-2xl shadow-lg p-6">
       <h3 class="text-xl font-[Poppins] font-semibold text-yellow-500 mb-4">Gold Sponsor</h3>
       <div class="flex justify-center">
-        <img src="\sponser\pics1 (1).png" alt="Gold Sponsor" class="h-32 object-contain">
+        <img src="\sponser\pics1 (1).png" alt="Gold Sponsor" class="h-20 sm:h-28 md:h-32 object-contain">
       </div>
     </div>
     <div class="bg-white rounded-2xl shadow-lg p-6 ">
       <h3 class="text-xl font-[Poppins] font-semibold text-gray-500 mb-4">Silver Sponsor</h3>
       <div class="flex justify-center">
-        <img src="\sponser\pics2.png" alt="Silver Sponsor" class=" object-contain">
+        <img src="\sponser\pics2.png" alt="Silver Sponsor" class="h-20 sm:h-28 md:h-32 object-contain">
       </div>
     </div>
 
     <div class="bg-white rounded-2xl shadow-lg p-6 ">
       <h3 class="text-xl font-[Poppins] font-semibold text-orange-500 mb-4">Bronze Sponsor</h3>
       <div class="flex justify-center">
-        <img src="\sponser\pics4.png" alt="Bronze Sponsor" class="h-32 object-contain">
+        <img src="\sponser\pics4.png" alt="Bronze Sponsor" class="h-20 sm:h-28 md:h-32 object-contain">
       </div>
     </div>
   </div>
 </section>
 
 
-<footer class="relative w-[1260px] h-[460px] bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-12 py-10 text-white font-[Helvetica] overflow-hidden">
+<footer class="relative w-full max-w-[1260px] h-auto bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-6 sm:px-8 lg:px-12 py-8 lg:py-10 text-white font-[Helvetica] overflow-hidden">
   <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[940px] h-[240px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[990px] h-[280px] bg-white rounded-t-[1200px] opacity-8"></div>
@@ -346,13 +385,13 @@ Over the course of two days, attendees will have the opportunity to engage in ex
 
 
 
-  <div class="grid grid-cols-3 gap-1 relative z-10">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-1 relative z-10">
     
     <div>
       <div class="w-[101px] h-[101px] mb-6">
         <img src="1031bb7545f4365de670a156cac68e32cd2aecf8.png" alt="Logo" class="w-full h-full object-contain">
       </div>
-      <p class="w-[351px] h-[57px] font-[Inter] font-normal text-[16px] leading-[160%]">
+      <p class="max-w-[351px] font-[Inter] font-normal text-[16px] leading-[160%]">
         At Edux, we provide top-tier E-learning to the services to meet all your educational needs. 
         Whether you're a student.
       </p>
@@ -370,14 +409,14 @@ Over the course of two days, attendees will have the opportunity to engage in ex
       </div>
     </div>
 
-    <div class="ml-[130px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[130px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Get In Touch</h3>
       <p class="mb-6 text-[14.4px]">1st Floor Heathlaid House, Marlborough Hill, HA1 1UD, Harrow, UK</p>
       <p class="mb-6 text-[14.4px]">contact@ukneeded.com</p>
       <p>+44 7745217153 <br> +44 7885552064</p>
     </div>
 
-    <div class="ml-[200px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[200px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Help</h3>
       <ul class="space-y-4 text-[14.4px]">
         <li><a href="#" class="hover:underline">Upcoming Conferences</a></li>
@@ -389,13 +428,16 @@ Over the course of two days, attendees will have the opportunity to engage in ex
 
   </div>
 
-  <div class="mt-10 border-t border-white/40 pt-4 flex justify-between text-sm relative z-10">
+  <div class="mt-10 border-t border-white/40 pt-4 flex flex-col md:flex-row md:justify-between gap-4 text-sm relative z-10">
     <p>©2025 Copyright All Rights Reserved.</p>
-    <div class="flex space-x-6 mr-[90px]">
+    <div class="flex space-x-6 md:mr-[90px]">
       <a href="#" class="hover:underline">Privacy Policy</a>
       <a href="#" class="hover:underline">Term and Conditions</a>
     </div>
   </div> 
 </footer>
+
+<script src="src/menu.js"></script>
+<script type="module" src="src/main.js"></script>
 </body>
 </html>

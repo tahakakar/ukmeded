@@ -46,31 +46,70 @@
     </script>
 </head>
 <body>
- <section class="relative w-[1260px] h-[150px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600">
+<section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
-    
-    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
-    
-    <nav class="absolute top-[32px] left-[48px] w-[1175px] h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 mr-[18px] z-20">
-      
-      <div class="flex items-center">
-        <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold"><img src="mainogo1.png" alt=""></div>
+  <!-- White background curves -->
+  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
+  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
+
+  <!-- NAVBAR -->
+  <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
+
+    <!-- Logo -->
+    <div class="flex items-center">
+      <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
+        <img src="mainogo1.png" alt="">
       </div>
+    </div>
 
-      <ul class="flex space-x-8 text-white font-medium">
-        <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
-        <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
-        <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">upoming conferences</a></li>
-        <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">past conferences</a></li>
-        <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">gallery</a></li>
-        <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact us</a></li>
-      </ul>
-      <a href="registerationpage.html" class="bg-blue-600 h-[54px] flex justify-center items-center text-white px-6  rounded-full font-semibold hover:bg-transparent hover:text-blue-500 border border-blue-500 transition-normal">
-        Register Now
-      </a>
-    </nav>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
+      <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
+      <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Upcoming Conferences</a></li>
+      <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Past Conferences</a></li>
+      <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Gallery</a></li>
+      <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
+    </ul>
+
+    <!-- Mobile Menu -->
+    <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
+      <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
+      <li><a href="conference.html" class="hover:text-blue-500 uppercase">Upcoming Conferences</a></li>
+      <li><a href="pastconference.html" class="hover:text-blue-500 uppercase">Past Conferences</a></li>
+      <li><a href="gellery.html" class="hover:text-blue-500 uppercase">Gallery</a></li>
+      <li><a href="contact.html" class="hover:text-blue-500 uppercase">Contact Us</a></li>
+      <li>
+        <a href="registerationpage.html" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-transparent border border-blue-600 hover:text-blue-600 transition">Register Now</a>
+      </li>
+    </ul>
+
+    <!-- Register Button (Desktop) -->
+    <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
+  </nav>
 </section>
+<script>
+  (function(){
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('hidden')) {
+        const inside = menu.contains(e.target);
+        const onBtn = btn.contains(e.target);
+        if (!inside && !onBtn) menu.classList.add('hidden');
+      }
+    });
+  })();
+</script>
  <section class="max-w-6xl mx-auto px-6 py-16">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-800"><span class="text-blue-500">Conference</span> Schedule</h2>
@@ -79,7 +118,7 @@
         
         <!-- Day Tabs -->
         <div class="flex justify-center mb-8">
-            <div class="inline-flex rounded-md shadow-sm" role="group">
+            <div data-aos="fade-up" class="inline-flex rounded-md shadow-sm" role="group">
                 <button type="button" class="tab-button py-2 px-6 text-sm font-medium rounded-l-lg border border-blue-500 active" data-day="day1">
                     Day 1 (June 13)
                 </button>
@@ -90,24 +129,24 @@
         </div>
         
         <!-- Day 1 Content -->
-        <div id="day1" class="tab-content active">
+        <div  data-aos="fade-up" id="day1" class="tab-content active">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <!-- Header -->
-                <div class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
+                <div  data-aos="fade-left" class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
                     <div class="p-4 text-center font-[Poppins]">Time</div>
                     <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
                 </div>
                 
                 <!-- Registration -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
-                    <div class="p-4 text-center font-medium font-[Poppins]">8:15</div>
-                    <div class="p-4 col-span-4 font-[Poppins]">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                    <div  data-aos="fade-up" class="p-4 text-center font-medium font-[Poppins]">8:15</div>
+                    <div data-aos="fade-up" class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Registration</h3>
                     </div>
                 </div>
                 
                 <!-- Welcome Note -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">8:55</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Welcome Note</h3>
@@ -119,7 +158,7 @@
                 </div>
                 
                 <!-- FOOT & ANKLE SURGERY 1 -->
-                <div class="border-b border-gray-100">
+                <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -135,7 +174,7 @@
                             </div>
                         </div>
                         <div class="session-details bg-blue-50">
-                            <div class="px-4 pb-4 font-[Poppins] ml-20">
+                            <div  data-aos="fade-up" class="px-4 pb-4 font-[Poppins] ml-20">
                                 <!-- Session items -->
                                 <div class="mt-3">
                                     <h4 class="font-medium">9:00 - Updates in the Minimally Invasive Treatment of Insertional Heel Pain</h4>
@@ -189,7 +228,7 @@
                 </div>
                 
                 <!-- Morning Refreshments -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">11:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Morning Refreshments and Coffee Break</h3>
@@ -200,7 +239,7 @@
                 </div>
                 
                 <!-- Elbow Session Instability Forum -->
-                <div class="border-b border-gray-100">
+                <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -251,7 +290,7 @@
                 </div>
                 
                 <!-- Hand & Wrist 1 (Parallel Session) -->
-                <div class="border-b border-gray-100">
+                <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-3">
@@ -295,7 +334,7 @@
                 </div>
                 
                 <!-- Lunch -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">13:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Lunch | Networking Break</h3>
@@ -304,7 +343,7 @@
                 </div>
                 
                 <!-- Shoulder Session -->
-                <div class="border-b border-gray-100">
+                <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -353,7 +392,7 @@
                 </div>
                 
                 <!-- Afternoon Refreshments -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">15:15</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Afternoon Refreshments and Coffee Break</h3>
@@ -361,7 +400,7 @@
                 </div>
                 
                 <!-- Hip/Knee 1 -->
-                <div class="border-b border-gray-100">
+                <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -414,7 +453,7 @@
                 </div>
                 
                 <!-- Closing Remarks -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">17:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Closing Remarks by Meeting Chairs</h3>
@@ -426,7 +465,7 @@
                 </div>
                 
                 <!-- Drinks Reception -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">17:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Drinks Reception and Networking</h3>
@@ -434,7 +473,7 @@
                 </div>
                 
                 <!-- Dinner -->
-                <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
+                <div  data-aos="fade-up" class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">19:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Dinner</h3>
@@ -446,16 +485,16 @@
         </div>
         
         <!-- Day 2 Content -->
-        <div id="day2" class="tab-content">
+        <div  data-aos="fade-up" id="day2" class="tab-content">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <!-- Header -->
-                <div class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
+                <div  data-aos="fade-up" class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
                     <div class="p-4 text-center font-[Poppins]">Time</div>
                     <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
                 </div>
                 
                 <!-- Registration -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">8:15</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Registration</h3>
@@ -463,7 +502,7 @@
                 </div>
                 
                 <!-- Welcome Note -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">8:55</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Welcome Note</h3>
@@ -475,7 +514,7 @@
                 </div>
                 
                 <!-- FOOT & ANKLE 2 -->
-                <div class="border-b border-gray-100">
+                <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -526,7 +565,7 @@
                 </div>
                 
                 <!-- HAND & WRIST 2 -->
-                <div class="border-b border-gray-100">
+                <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -567,7 +606,7 @@
                 </div>
                 
                 <!-- Morning Refreshments -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">11:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Morning Refreshments and Coffee Break</h3>
@@ -575,7 +614,7 @@
                 </div>
                 
                 <!-- ELBOW -->
-                <div class="border-b border-gray-100">
+                <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -616,7 +655,7 @@
                 </div>
                 
                 <!-- Lunch -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div data-aos="fade-up"  class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">12:45</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Lunch and Poster Presentation | One-to-One Networking Meetings</h3>
@@ -624,7 +663,7 @@
                 </div>
                 
                 <!-- ELBOW CONTINUED -->
-                <div class="border-b border-gray-100">
+                <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -660,7 +699,7 @@
                 </div>
                 
                 <!-- Afternoon Refreshments -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div data-aos="fade-up"  class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">14:45</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Afternoon Refreshments and Coffee Break</h3>
@@ -668,7 +707,7 @@
                 </div>
                 
                 <!-- Shoulder 2 -->
-                <div class="border-b border-gray-100">
+                <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
                         <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-1">
@@ -716,7 +755,7 @@
                 </div>
                 
                 <!-- Closing Remarks -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
+                <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">16:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Closing Remarks by Meeting Chairs</h3>
@@ -728,7 +767,7 @@
                 </div>
                 
                 <!-- Drinks Reception -->
-                <div class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
+                <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">16:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Drinks Reception and Networking</h3>
@@ -736,7 +775,7 @@
                 </div>
                 
                 <!-- Dinner -->
-                <div class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
+                <div data-aos="fade-up" class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">19:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Dinner</h3>
@@ -749,7 +788,7 @@
         </div>
         
         <!-- Legend -->
-        <div class="mt-8 bg-white rounded-2xl shadow-lg p-6">
+        <div  data-aos="fade-up" class="mt-8 bg-white rounded-2xl shadow-lg p-6">
             <h3 class="font-semibold text-gray-800 mb-3 font-[Poppins]">Schedule Legend</h3>
             <div class="flex flex-wrap gap-4">
                 <div class="flex items-center">
@@ -810,7 +849,7 @@
         });
     </script>
 
-<footer class="relative w-[1260px] h-[460px] bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-12 py-10 text-white font-[Helvetica] overflow-hidden">
+<footer class="relative w-full max-w-[1260px] h-auto bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-6 sm:px-8 lg:px-12 py-8 lg:py-10 text-white font-[Helvetica] overflow-hidden">
   <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[940px] h-[240px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[990px] h-[280px] bg-white rounded-t-[1200px] opacity-8"></div>
@@ -818,13 +857,13 @@
 
 
 
-  <div class="grid grid-cols-3 gap-1 relative z-10">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-1 relative z-10">
     
     <div>
       <div class="w-[101px] h-[101px] mb-6">
         <img src="1031bb7545f4365de670a156cac68e32cd2aecf8.png" alt="Logo" class="w-full h-full object-contain">
       </div>
-      <p class="w-[351px] h-[57px] font-[Inter] font-normal text-[16px] leading-[160%]">
+      <p class="max-w-[351px] font-[Inter] font-normal text-[16px] leading-[160%]">
         At Edux, we provide top-tier E-learning to the services to meet all your educational needs. 
         Whether you're a student.
       </p>
@@ -842,14 +881,14 @@
       </div>
     </div>
 
-    <div class="ml-[130px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[130px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Get In Touch</h3>
       <p class="mb-6 text-[14.4px]">1st Floor Heathlaid House, Marlborough Hill, HA1 1UD, Harrow, UK</p>
       <p class="mb-6 text-[14.4px]">contact@ukneeded.com</p>
       <p>+44 7745217153 <br> +44 7885552064</p>
     </div>
 
-    <div class="ml-[200px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[200px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Help</h3>
       <ul class="space-y-4 text-[14.4px]">
         <li><a href="#" class="hover:underline">Upcoming Conferences</a></li>
@@ -861,13 +900,16 @@
 
   </div>
 
-  <div class="mt-10 border-t border-white/40 pt-4 flex justify-between text-sm relative z-10">
+  <div class="mt-10 border-t border-white/40 pt-4 flex flex-col md:flex-row md:justify-between gap-4 text-sm relative z-10">
     <p>©2025 Copyright All Rights Reserved.</p>
-    <div class="flex space-x-6 mr-[90px]">
+    <div class="flex space-x-6 md:mr-[90px]">
       <a href="#" class="hover:underline">Privacy Policy</a>
       <a href="#" class="hover:underline">Term and Conditions</a>
     </div>
   </div> 
 </footer>
+
+<script src="src/menu.js"></script>
+<script type="module" src="src/main.js"></script>
 </body>
 </html>

@@ -12,19 +12,19 @@
 </style>
 </head>
 <body>
-    <section class="relative w-[1260px] h-[712px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600">
+    <section class="relative w-full max-w-[1260px] h-auto lg:h-[712px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6">
 
     <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
     
     <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
     
-    <nav class="absolute top-[32px] left-[48px] w-[1175px] h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 mr-[18px] z-20">
+    <nav class="absolute top-[32px] left-[48px] w-[calc(100%-96px)] h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
       
       <div class="flex items-center">
         <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold"><img src="mainogo1.png" alt=""></div>
       </div>
 
-      <ul class="flex space-x-8 text-white font-medium">
+      <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
         <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
         <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
         <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">upoming conferences</a></li>
@@ -32,21 +32,31 @@
         <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">gallery</a></li>
         <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact us</a></li>
       </ul>
-      <a href="registerationpage.html" class="bg-blue-600 h-[54px] flex justify-center items-center text-white px-6  rounded-full font-semibold hover:bg-transparent hover:text-blue-500 border border-blue-500 transition-normal">
-        Register Now
-      </a>
+      <ul id="mobileMenu" class="absolute top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
+        <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
+        <li><a href="conference.html" class="hover:text-blue-500 uppercase">Upcoming Conferences</a></li>
+        <li><a href="pastconference.html" class="hover:text-blue-500 uppercase">Past Conferences</a></li>
+        <li><a href="gellery.html" class="hover:text-blue-500 uppercase">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-blue-500 uppercase">Contact us</a></li>
+        <li>
+          <a href="registerationpage.html" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-transparent border border-blue-600 hover:text-blue-600 transition">Register Now</a>
+        </li>
+      </ul>
+      <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
+      <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full"> ☰ </button>
     </nav>
     
-    <div class="flex items-center justify-between h-full px-12 ">
+    <div class="flex flex-col lg:flex-row items-center justify-between h-full px-6 md:px-12 gap-6 lg:gap-0">
       
       <div class="text-white w-[597px] mt-8">
-        <h1 class="text-[66px] font-semibold font-[Poppins] mb-6 flex justify-center">About Us</h1>
-        <p class="text-[15px] font-[Poppins] font-normal mb-8">UK Medical Education Limited, headquartered in London, was founded by leading orthopaedic surgeons, Mr. Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma) at Princess Royal University Hospital, King’s College Hospital NHS Foundation Trust, and Mr. Robbie Ray, Orthopaedic Surgeon. Our mission is to create impactful educational platforms through high-quality conferences focused on the latest developments in orthopaedic advanced surgery.
+        <h1 data-aos="fade-left" class="text-[66px] font-semibold font-[Poppins] mb-6 flex justify-center">About Us</h1>
+        <p data-aos="fade-left" class="text-[15px] font-[Poppins] font-normal mb-8">UK Medical Education Limited, headquartered in London, was founded by leading orthopaedic surgeons, Mr. Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma) at Princess Royal University Hospital, King’s College Hospital NHS Foundation Trust, and Mr. Robbie Ray, Orthopaedic Surgeon. Our mission is to create impactful educational platforms through high-quality conferences focused on the latest developments in orthopaedic advanced surgery.
 
 At UK Medical Education Limited, our conferences are designed to facilitate the exchange of knowledge among healthcare professionals, researchers, and innovators in the field of orthopaedics. We bring together expert speakers and participants from around the world, enabling them to share insights, explore new techniques, and engage in peer networking. Our focus on Minimally Invasive Surgery ensures that attendees stay at the forefront of surgical advancements, with discussions ranging from cutting-edge technologies to the latest clinical practices.</p>
 
         <div class="flex justify-center">
- <a href="#"
+ <a data-aos="fade-left" href="#"
   class="group relative overflow-hidden bg-transparent font-[Montserrat] px-6 py-3 rounded-full flex items-center font-semibold border border-white text-blue-500">
   
   <span class="relative z-10 transition-colors duration-500 group-hover:text-white">
@@ -57,17 +67,17 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
 </a>
         </div>
       </div>
-      <div class="absolute w-[600px] overflow-hidden ml-[600px] z-0">
-        <img src="dca3015b87311f60e1e2c7e871a7c8bf7e79a67f.png" alt="Hero Image" class="h-[480px] w-full object-cover object-top mt-[241px]">
+      <div class="hidden lg:block absolute right-0 bottom-0 w-[600px] z-0">
+        <img src="dca3015b87311f60e1e2c7e871a7c8bf7e79a67f.png" alt="Hero Image" class="h-[480px] w-full object-cover object-top">
       </div>
     </div>
 
     
   </section>
-  <section class="py-16 h-[500px] w-[1260px]  bg-[rgba(0,184,230,0.05)] rounded-[48px] mt-16 ml-[50px]">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+  <section class="py-16 w-full max-w-[1260px] bg-[rgba(0,184,230,0.05)] rounded-[48px] mt-16 mx-auto px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
     
-    <div class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+    <div data-aos="fade-left" class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
       <span class="absolute top-4 left-4 text-6xl font-extrabold text-gray-300 opacity-40 select-none">01</span>
       <h3 class="text-[24px] font-bold font-[Poppins] relative z-10 uppercase">Cutting-Edge Insights</h3>
       <p class="mt-3 text-[16px] font-[Poppins] font-normal relative z-10">
@@ -75,7 +85,7 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
       </p>
     </div>
 
-    <div class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+    <div data-aos="fade-left" class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
       <span class="absolute top-4 left-4 text-6xl font-extrabold text-gray-300 opacity-40 select-none">02</span>
       <h3 class="text-[24px] font-bold font-[Poppins] relative z-10 uppercase">Comprehensive Learning</h3>
       <p class="mt-3 text-[16px] font-[Poppins] font-normal relative z-10">
@@ -83,7 +93,7 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
       </p>
     </div>
 
-    <div class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+    <div data-aos="fade-left" class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
       <span class="absolute top-4 left-4 text-6xl font-extrabold text-gray-300 opacity-40 select-none">03</span>
       <h3 class="text-[24px] font-bold font-[Poppins] relative z-10 uppercase">Exceptional Networking</h3>
       <p class="mt-3 text-[16px] font-[Poppins] font-normal relative z-10">
@@ -91,7 +101,7 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
       </p>
     </div>
 
-    <div class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
+    <div data-aos="fade-left" class="relative bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
       <span class="absolute top-4 left-4 text-6xl font-extrabold text-gray-300 opacity-40 select-none">04</span>
       <h3 class="text-[24px] font-bold font-[Poppins] relative z-10 uppercase">Collaborative Environment</h3>
       <p class="mt-3 text-[16px] font-[Poppins] font-normal relative z-10">
@@ -101,15 +111,24 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
 
   </div>
 </section>
-<section class="bg-white py-16">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<script>
+  const aboutMenuBtn = document.getElementById("menu-btn");
+  const aboutMobileMenu = document.getElementById("mobileMenu");
+  if (aboutMenuBtn && aboutMobileMenu) {
+    aboutMenuBtn.addEventListener("click", function () {
+      aboutMobileMenu.classList.toggle("hidden");
+    });
+  }
+</script>
+<section class="bg-white py-16 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     
-    <div>
+    <div data-aos="fade-up">
       <img src="\about\pics1.jpg" alt="Conference Networking" 
            class="rounded-2xl shadow-lg">
     </div>
 
-    <div>
+    <div data-aos="fade-left">
       <h2 class="text-[60px] md:text-[40px] md:font-[Poppins] font-bold mb-6">
         Building <span class="text-blue-500">Connections That Shape </span>the Future
       </h2>
@@ -132,63 +151,72 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
   </div>
 </section>
 
- <section class="py-16 px-4  lg:px-16  mx-auto w-[1260px] h-[779px] rounded-[48px] mt-[60px] bg-[rgba(0,184,230,0.05)]">
-        <div class="text-center mb-12">
+ <section class="py-16 px-4 lg:px-16 mx-auto w-full max-w-[1260px] rounded-[48px] mt-[60px] bg-[rgba(0,184,230,0.05)]">
+        <div data-aos="fade-up" class="text-center mb-12">
             <h2 class="text-3xl font-[Poppins] font-semibold md:text-4xl  mb-4"> <span class="text-blue-500">How We Stand</span> Out</h2>
             <p class="text-[18px] font-[Poppins] font-normal max-w-2xl mx-auto">Our conference brings together industry leaders, innovators, and professionals for an unforgettable experience of learning and networking.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
-            <div class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-primary">
+            <div data-aos="fade-left" class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-primary">
                 <div class="bg-blue-100 p-4 rounded-full mb-4">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-microphone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z" /><path d="M5 10a7 7 0 0 0 14 0" /><path d="M8 21l8 0" /><path d="M12 17l0 4" /></svg>
                 </div>
                 <h3 class="text-2xl font-bold font-[Poppins] text-primary mb-2">Speakers</h3>
-                <p class="text-[24px] font-extrabold font-[Poppins] mb-2">50+</p>
+                   <p class="text-[24px] font-extrabold font-[Poppins] mb-2">
+                  <span class="counter" data-target="50">0</span>+
+                  </p>
+
                 <p class="font-normal text-gray-600 text-[16px] font-[Poppins]">Industry experts sharing their knowledge</p>
             </div>
-            <div class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-secondary">
+            <div data-aos="fade-left" class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-secondary">
                 <div class="bg-blue-100 p-4 rounded-full mb-4">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
                 </div>
                 <h3 class="text-2xl font-bold text-secondary font-[Poppins] mb-2">Delegates</h3>
-                <p class="text-[24px] font-extrabold mb-2 font-[Poppins]">300+</p>
+                    <p class="text-[24px] font-extrabold font-[Poppins] mb-2">
+                    <span class="counter" data-target="300">0</span>+
+                      </p>
                 <p class="font-normal text-gray-600 text-[16px] font-[Poppins]">Professionals from various industries</p>
             </div>
-            <div class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-accent">
+            <div data-aos="fade-left" class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 border-accent">
                 <div class="bg-blue-100 p-4 rounded-full mb-4">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bulb"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" /><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" /><path d="M9.7 17l4.6 0" /></svg>
                 </div>
                 <h3 class="text-2xl font-bold font-[Poppins] mb-2">Solution Providers</h3>
-                <p class="text-[24px] font-extrabold mb-2 font-[Poppins]">20+</p>
-                <p class="font-normal text-gray-600 text-[16px] font-[Poppins]">Companies showcasing innovative solutions</p>
+                <p class="text-[24px] font-extrabold font-[Poppins] mb-2">
+                <span class="counter" data-target="20">0</span>+
+                </p>
+              <p class="font-normal text-gray-600 text-[16px] font-[Poppins]">Companies showcasing innovative solutions</p>
             </div>
 
-            <div class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 ">
+            <div data-aos="fade-left" class="stat-card bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border-t-4 ">
                 <div class="bg-blue-100 p-4 rounded-full mb-4">
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-heart-handshake"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /><path d="M12 6l-3.293 3.293a1 1 0 0 0 0 1.414l.543 .543c.69 .69 1.81 .69 2.5 0l1 -1a3.182 3.182 0 0 1 4.5 0l2.25 2.25" /><path d="M12.5 15.5l2 2" /><path d="M15 13l2 2" /></svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-2 font-[Poppins]">Networking Hours</h3>
-                <p class="text-[24px] font-extrabold mb-2 font-[Poppins]">5+</p>
+                <p class="text-[24px] font-extrabold font-[Poppins] mb-2">
+                  <span class="counter" data-target="5">0</span>+
+                  </p>
                 <p class="font-normal text-gray-600 text-[16px] font-[Poppins]">Dedicated time for making connections</p>
             </div>
         </div>
         <div class="mt-16 bg-gradient-to-r from-primary to-secondary  p-6 text-white">
             <div class="flex flex-wrap justify-center items-center">
                 <div class="text-center md:w-auto w-full">
-                    <button class="flex bg-blue-500 text-primary font-bold py-3 px-6 rounded-full hover:bg-transparent hover:text-blue-500 border hover:border-blue-400 transition-all">
+              <a href="registerationpage.html">      <button data-aos="fade-up" class="flex bg-blue-500 text-primary font-bold py-3 px-6 rounded-full hover:bg-transparent hover:text-blue-500 border hover:border-blue-400 transition-all">
                         Register Now  <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M17 7l-10 10" />
       <path d="M8 7h9v9" />
     </svg>
-                    </button>
+                    </button></a>
                 </div>
             </div>
         </div>
     </section>
 
-<footer class="relative w-[1260px] h-[460px] bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-12 py-10 text-white font-[Helvetica] overflow-hidden">
+<footer class="relative w-full max-w-[1260px] h-auto bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-6 sm:px-8 lg:px-12 py-8 lg:py-10 text-white font-[Helvetica] overflow-hidden">
   <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[940px] h-[240px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[990px] h-[280px] bg-white rounded-t-[1200px] opacity-8"></div>
@@ -196,13 +224,13 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
 
 
 
-  <div class="grid grid-cols-3 gap-1 relative z-10">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-1 relative z-10">
     
     <div>
       <div class="w-[101px] h-[101px] mb-6">
         <img src="1031bb7545f4365de670a156cac68e32cd2aecf8.png" alt="Logo" class="w-full h-full object-contain">
       </div>
-      <p class="w-[351px] h-[57px] font-[Inter] font-normal text-[16px] leading-[160%]">
+      <p class="max-w-[351px] font-[Inter] font-normal text-[16px] leading-[160%]">
         At Edux, we provide top-tier E-learning to the services to meet all your educational needs. 
         Whether you're a student.
       </p>
@@ -220,14 +248,14 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
       </div>
     </div>
 
-    <div class="ml-[130px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[130px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Get In Touch</h3>
       <p class="mb-6 text-[14.4px]">1st Floor Heathlaid House, Marlborough Hill, HA1 1UD, Harrow, UK</p>
       <p class="mb-6 text-[14.4px]">contact@ukneeded.com</p>
       <p>+44 7745217153 <br> +44 7885552064</p>
     </div>
 
-    <div class="ml-[200px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[200px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Help</h3>
       <ul class="space-y-4 text-[14.4px]">
         <li><a href="#" class="hover:underline">Upcoming Conferences</a></li>
@@ -239,14 +267,16 @@ At UK Medical Education Limited, our conferences are designed to facilitate the 
 
   </div>
 
-  <div class="mt-10 border-t border-white/40 pt-4 flex justify-between text-sm relative z-10">
+  <div class="mt-10 border-t border-white/40 pt-4 flex flex-col md:flex-row md:justify-between gap-4 text-sm relative z-10">
     <p>©2025 Copyright All Rights Reserved.</p>
-    <div class="flex space-x-6 mr-[90px]">
+    <div class="flex space-x-6 md:mr-[90px]">
       <a href="#" class="hover:underline">Privacy Policy</a>
       <a href="#" class="hover:underline">Term and Conditions</a>
     </div>
   </div>
 </footer>
 
+
+<script type="module" src="src/main.js"></script>
 </body>
 </html>

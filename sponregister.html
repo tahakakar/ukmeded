@@ -12,44 +12,82 @@
 </style>
 </head>
 <body>
-    
-     <section class="relative w-[1260px] h-[150px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600">
+   <section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
-    
-    <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
-    
-    <nav class="absolute top-[32px] left-[48px] w-[1175px] h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 mr-[18px] z-20">
-      
-      <div class="flex items-center">
-        <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold"><img src="mainogo1.png" alt=""></div>
+  <!-- White background curves -->
+  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
+  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
+
+  <!-- NAVBAR -->
+  <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
+
+    <!-- Logo -->
+    <div class="flex items-center">
+      <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
+        <img src="mainogo1.png" alt="">
       </div>
+    </div>
 
-      <ul class="flex space-x-8 text-white font-medium">
-        <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
-        <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
-        <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">upoming conferences</a></li>
-        <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">past conferences</a></li>
-        <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">gallery</a></li>
-        <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact us</a></li>
-      </ul>
-      <a href="registerationpage.html" class="bg-blue-600 h-[54px] flex justify-center items-center text-white px-6  rounded-full font-semibold hover:bg-transparent hover:text-blue-500 border border-blue-500 transition-normal">
-        Register Now
-      </a>
-    </nav>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
+      <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
+      <li><a href="conference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Upcoming Conferences</a></li>
+      <li><a href="pastconference.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Past Conferences</a></li>
+      <li><a href="gellery.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Gallery</a></li>
+      <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
+    </ul>
+
+    <!-- Mobile Menu -->
+    <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
+      <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
+      <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
+      <li><a href="conference.html" class="hover:text-blue-500 uppercase">Upcoming Conferences</a></li>
+      <li><a href="pastconference.html" class="hover:text-blue-500 uppercase">Past Conferences</a></li>
+      <li><a href="gellery.html" class="hover:text-blue-500 uppercase">Gallery</a></li>
+      <li><a href="contact.html" class="hover:text-blue-500 uppercase">Contact Us</a></li>
+      <li>
+        <a href="registerationpage.html" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-transparent border border-blue-600 hover:text-blue-600 transition">Register Now</a>
+      </li>
+    </ul>
+
+    <!-- Register Button (Desktop) -->
+    <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
+  </nav>
 </section>
-<section class="min-h-screen w-[1260px] bg-[rgba(0,184,230,0.05)] rounded-[48px] mx-auto px-6 py-16 mt-[60px] flex items-center justify-center p-4 font-[Poppins]">
+<script>
+  (function(){
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('hidden')) {
+        const inside = menu.contains(e.target);
+        const onBtn = btn.contains(e.target);
+        if (!inside && !onBtn) menu.classList.add('hidden');
+      }
+    });
+  })();
+</script>
+<section class="min-h-screen w-full max-w-[1260px] bg-[rgba(0,184,230,0.05)] rounded-[48px] mx-auto px-4 sm:px-6 py-16 mt-[60px] flex items-center justify-center font-[Poppins]">
  <div class="bg-white rounded-lg shadow-md w-full max-w-md">
         <!-- Form Header -->
-        <div class="bg-blue-600 text-white p-6 rounded-t-lg">
-            <h1 class="text-2xl font-bold">Register as a Sponser</h1>
-            <p class="mt-2 text-blue-100">Please fill in all required fields marked with *</p>
+        <div data-aos="fade-up" class="bg-blue-600 text-white p-6 rounded-t-lg">
+            <h1 data-aos="fade-up" class="text-2xl font-bold">Register as a Sponser</h1>
+            <p data-aos="fade-up" class="mt-2 text-blue-100">Please fill in all required fields marked with *</p>
         </div>
         
         <!-- Registration Form -->
         <form class="p-6 space-y-4">
             <!-- Name Field -->
-            <div>
+            <div data-aos="fade-up" >
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name <span class="text-red-600"> *</span></label>
                 <input 
                     type="text" 
@@ -61,7 +99,7 @@
             </div>
             
             <!-- Hospital Field -->
-            <div>
+            <div data-aos="fade-up" >
                 <label for="hospital" class="block text-sm font-medium text-gray-700 mb-1">Company<span class="text-red-600"> *</span></label>
                 <input 
                     type="text" 
@@ -73,7 +111,7 @@
             </div>
             
             <!-- Delegation Field -->
-            <div>
+            <div data-aos="fade-up" >
                 <label for="delegation" class="block text-sm font-medium text-gray-700 mb-1">Designation <span class="text-red-600"> *</span></label>
                 <input 
                     type="text" 
@@ -85,7 +123,7 @@
             </div>
             
             <!-- Email Field -->
-            <div>
+            <div data-aos="fade-up" >
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Official Email Address <span class="text-red-600"> *</span></label>
                 <input 
                     type="email" 
@@ -97,7 +135,7 @@
             </div>
             
             <!-- Phone Field -->
-            <div>
+            <div data-aos="fade-up" >
                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone<span class="text-red-600"> *</span></label>
                 <input 
                     type="tel" 
@@ -109,7 +147,7 @@
             </div>
             
             <!-- Country Field -->
-            <div>
+            <div data-aos="fade-up" >
                 <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
                 <select 
                     id="country"
@@ -124,7 +162,7 @@
             </div>
             
             <!-- Attendance Field -->
-            <div>
+            <div data-aos="fade-up" >
                 <label class="block text-sm font-medium text-gray-700 mb-2">Attendance <span class="text-red-600"> *</span></label>
                 <div class="space-y-2">
                     <div class="flex items-center">
@@ -138,7 +176,7 @@
                         >
                         <label for="both-days" class="ml-2 block text-sm text-gray-700">Both days</label>
                     </div>
-                    <div class="flex items-center">
+                    <div data-aos="fade-up" class="flex items-center">
                         <input 
                             type="radio" 
                             id="day1" 
@@ -148,7 +186,7 @@
                         >
                         <label for="day1" class="ml-2 block text-sm text-gray-700">Day 1 only</label>
                     </div>
-                    <div class="flex items-center">
+                    <div data-aos="fade-up" class="flex items-center">
                         <input 
                             type="radio" 
                             id="day2" 
@@ -162,7 +200,7 @@
             </div>
             
             <!-- Submit Button -->
-            <div class="pt-4">
+            <div data-aos="fade-up" class="pt-4">
                 <button 
                     type="submit"
                     class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-transparent border-2 border-blue-500 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200"
@@ -175,7 +213,7 @@
     </section>
     
 
-<footer class="relative w-[1260px] h-[460px] bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-12 py-10 text-white font-[Helvetica] overflow-hidden">
+<footer class="relative w-full max-w-[1260px] h-auto bg-[#2C63E2] rounded-[48px] mx-auto mt-10 mb-[60px] px-6 sm:px-8 lg:px-12 py-8 lg:py-10 text-white font-[Helvetica] overflow-hidden">
   <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[940px] h-[240px] bg-white rounded-t-[1200px] opacity-8"></div>
 <div class="absolute bottom-[-110px] left-1/2 transform -translate-x-1/2 w-[990px] h-[280px] bg-white rounded-t-[1200px] opacity-8"></div>
@@ -183,13 +221,13 @@
 
 
 
-  <div class="grid grid-cols-3 gap-1 relative z-10">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-1 relative z-10">
     
     <div>
       <div class="w-[101px] h-[101px] mb-6">
         <img src="1031bb7545f4365de670a156cac68e32cd2aecf8.png" alt="Logo" class="w-full h-full object-contain">
       </div>
-      <p class="w-[351px] h-[57px] font-[Inter] font-normal text-[16px] leading-[160%]">
+      <p class="max-w-[351px] font-[Inter] font-normal text-[16px] leading-[160%]">
         At Edux, we provide top-tier E-learning to the services to meet all your educational needs. 
         Whether you're a student.
       </p>
@@ -207,14 +245,14 @@
       </div>
     </div>
 
-    <div class="ml-[130px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[130px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Get In Touch</h3>
       <p class="mb-6 text-[14.4px]">1st Floor Heathlaid House, Marlborough Hill, HA1 1UD, Harrow, UK</p>
       <p class="mb-6 text-[14.4px]">contact@ukneeded.com</p>
       <p>+44 7745217153 <br> +44 7885552064</p>
     </div>
 
-    <div class="ml-[200px] mt-[78px] font-[Poppins]">
+    <div class="md:ml-[200px] mt-[40px] md:mt-[78px] font-[Poppins]">
       <h3 class="text-[19.2px] font-bold mb-4">Help</h3>
       <ul class="space-y-4 text-[14.4px]">
         <li><a href="#" class="hover:underline">Upcoming Conferences</a></li>
@@ -226,13 +264,17 @@
 
   </div>
 
-  <div class="mt-10 border-t border-white/40 pt-4 flex justify-between text-sm relative z-10">
+  <div class="mt-10 border-t border-white/40 pt-4 flex flex-col md:flex-row md:justify-between gap-4 text-sm relative z-10">
     <p>©2025 Copyright All Rights Reserved.</p>
-    <div class="flex space-x-6 mr-[90px]">
+    <div class="flex space-x-6 md:mr-[90px]">
       <a href="#" class="hover:underline">Privacy Policy</a>
       <a href="#" class="hover:underline">Term and Conditions</a>
     </div>
   </div> 
 </footer>
+
+
+<script src="src/menu.js"></script>
+<script type="module" src="src/main.js"></script>
 </body>
 </html>
