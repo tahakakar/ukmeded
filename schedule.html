@@ -45,24 +45,20 @@
         }
     </script>
 </head>
-<body>
+<body class="bg-white overflow-x-hidden">
 <section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-  <!-- White background curves -->
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
 
-  <!-- NAVBAR -->
   <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
 
-    <!-- Logo -->
     <div class="flex items-center">
       <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
         <img src="mainogo1.png" alt="">
       </div>
     </div>
 
-    <!-- Desktop Menu -->
     <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
       <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
@@ -72,7 +68,6 @@
       <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
     </ul>
 
-    <!-- Mobile Menu -->
     <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
       <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
@@ -85,10 +80,8 @@
       </li>
     </ul>
 
-    <!-- Register Button (Desktop) -->
     <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
 
-    <!-- Mobile Menu Button -->
     <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
   </nav>
 </section>
@@ -116,7 +109,6 @@
             <p class="text-gray-600 mt-2">Two days of learning and networking</p>
         </div>
         
-        <!-- Day Tabs -->
         <div class="flex justify-center mb-8">
             <div data-aos="fade-up" class="inline-flex rounded-md shadow-sm" role="group">
                 <button type="button" class="tab-button py-2 px-6 text-sm font-medium rounded-l-lg border border-blue-500 active" data-day="day1">
@@ -128,16 +120,14 @@
             </div>
         </div>
         
-        <!-- Day 1 Content -->
         <div  data-aos="fade-up" id="day1" class="tab-content active">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <!-- Header -->
+               
                 <div  data-aos="fade-left" class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
                     <div class="p-4 text-center font-[Poppins]">Time</div>
                     <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
                 </div>
                 
-                <!-- Registration -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div  data-aos="fade-up" class="p-4 text-center font-medium font-[Poppins]">8:15</div>
                     <div data-aos="fade-up" class="p-4 col-span-4 font-[Poppins]">
@@ -145,7 +135,6 @@
                     </div>
                 </div>
                 
-                <!-- Welcome Note -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">8:55</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -157,7 +146,6 @@
                     </div>
                 </div>
                 
-                <!-- FOOT & ANKLE SURGERY 1 -->
                 <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -175,7 +163,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div  data-aos="fade-up" class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                              
                                 <div class="mt-3">
                                     <h4 class="font-medium">9:00 - Updates in the Minimally Invasive Treatment of Insertional Heel Pain</h4>
                                     <p class="text-sm text-gray-600">Speaker: Tom Lewis, Trauma and Orthopaedic Surgery Specialty Trainee, NHS</p>
@@ -226,8 +214,6 @@
                         </div>
                     </label>
                 </div>
-                
-                <!-- Morning Refreshments -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">11:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -238,7 +224,6 @@
                     </div>
                 </div>
                 
-                <!-- Elbow Session Instability Forum -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -256,7 +241,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                            
                                 <div class="mt-3">
                                     <h4 class="font-medium">11:30-11:40 - Elbow Anatomy</h4>
                                     <p class="text-sm text-gray-600">Speaker: Kishan Gokaraju, Consultant Orthopaedic Surgeon (Upper Limb), King's College Hospital NHS Foundation Trust, London</p>
@@ -289,7 +274,6 @@
                     </label>
                 </div>
                 
-                <!-- Hand & Wrist 1 (Parallel Session) -->
                 <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -308,7 +292,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                              
                                 <div class="mt-3">
                                     <h4 class="font-medium">11:15 - Thumb Carpometacarpal Osteoarthritis</h4>
                                     <p class="text-sm text-gray-600">Speaker: Karthik Karrupiah, Consultant Orthopaedic Surgeon, Kings College Hospital</p>
@@ -333,7 +317,6 @@
                     </label>
                 </div>
                 
-                <!-- Lunch -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">13:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -342,7 +325,6 @@
                     </div>
                 </div>
                 
-                <!-- Shoulder Session -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -361,7 +343,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                              
                                 <div class="mt-3">
                                     <h4 class="font-medium">13:30 - Assessment of Shoulder Instability</h4>
                                     <p class="text-sm text-gray-600">Speaker: Henry Colaco, Consultant Shoulder & Elbow, Hand & Wrist Surgeon, Candover Clinic</p>
@@ -391,7 +373,6 @@
                     </label>
                 </div>
                 
-                <!-- Afternoon Refreshments -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">15:15</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -399,7 +380,6 @@
                     </div>
                 </div>
                 
-                <!-- Hip/Knee 1 -->
                 <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -415,7 +395,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                             
                                 <div class="mt-3">
                                     <h4 class="font-medium">15:30 - Periarticular Fractures around Knee</h4>
                                     <p class="text-sm text-gray-600">Speaker: Ash Vasireddy, Consultant Trauma Lead and Orthopaedic Surgeon, KCH NHS Foundation Trust</p>
@@ -452,7 +432,6 @@
                     </label>
                 </div>
                 
-                <!-- Closing Remarks -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">17:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -464,15 +443,12 @@
                     </div>
                 </div>
                 
-                <!-- Drinks Reception -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">17:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
                         <h3 class="font-semibold">Drinks Reception and Networking</h3>
                     </div>
                 </div>
-                
-                <!-- Dinner -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">19:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -484,16 +460,14 @@
             </div>
         </div>
         
-        <!-- Day 2 Content -->
         <div  data-aos="fade-up" id="day2" class="tab-content">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <!-- Header -->
+              
                 <div  data-aos="fade-up" class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
                     <div class="p-4 text-center font-[Poppins]">Time</div>
                     <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
                 </div>
                 
-                <!-- Registration -->
                 <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">8:15</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -501,7 +475,6 @@
                     </div>
                 </div>
                 
-                <!-- Welcome Note -->
                 <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">8:55</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -513,7 +486,6 @@
                     </div>
                 </div>
                 
-                <!-- FOOT & ANKLE 2 -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -531,7 +503,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                              
                                 <div class="mt-3">
                                     <h4 class="font-medium">9:00 - Understanding how far we've come in foot and ankle, moving away from old principles</h4>
                                     <p class="text-sm text-gray-600">Speaker: Ed Gee, Consultant Foot and Ankle Surgeon, Salford Royal Foundation Trust</p>
@@ -564,7 +536,6 @@
                     </label>
                 </div>
                 
-                <!-- HAND & WRIST 2 -->
                 <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -583,7 +554,6 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
                                 <div class="mt-3">
                                     <h4 class="font-medium">10:15 - Perilunate dislocation</h4>
                                     <p class="text-sm text-gray-600">Speaker: Ravi Mallina, Consultant Hand Surgeon, Croydon Health Services NHS Trust</p>
@@ -605,7 +575,6 @@
                     </label>
                 </div>
                 
-                <!-- Morning Refreshments -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">11:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -613,7 +582,6 @@
                     </div>
                 </div>
                 
-                <!-- ELBOW -->
                 <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -632,7 +600,6 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
                                 <div class="mt-3">
                                     <h4 class="font-medium">11:45 - Biceps & Triceps Injuries</h4>
                                     <p class="text-sm text-gray-600">Speaker: Abhinav Gulihar, Consultant Orthopaedic Surgeon (Upper Limb and Trauma), Princess Royal University Hospital, King's College Hospital NHS Foundation Trust</p>
@@ -654,7 +621,6 @@
                     </label>
                 </div>
                 
-                <!-- Lunch -->
                 <div data-aos="fade-up"  class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">12:45</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -662,7 +628,6 @@
                     </div>
                 </div>
                 
-                <!-- ELBOW CONTINUED -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -677,7 +642,6 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
                                 <div class="mt-3">
                                     <h4 class="font-medium">13:45 - Elbow Instability - Mechanism & Assessment</h4>
                                     <p class="text-sm text-gray-600">Speaker: Lee Van Rensburg, Consultant Shoulder & Elbow Surgeon, Cambridge University Hospitals NHS Foundation Trust</p>
@@ -697,8 +661,7 @@
                         </div>
                     </label>
                 </div>
-                
-                <!-- Afternoon Refreshments -->
+            
                 <div data-aos="fade-up"  class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">14:45</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -706,7 +669,6 @@
                     </div>
                 </div>
                 
-                <!-- Shoulder 2 -->
                 <div  data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -725,7 +687,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                             
                                 <div class="mt-3">
                                     <h4 class="font-medium">15:00 - Rotator Cuff Tears: Repair or Reconstruction?</h4>
                                     <p class="text-sm text-gray-600">Speaker: Tom Abbott, Consultant Orthopaedic Surgeon, Royal Berkshire Hospital</p>
@@ -754,7 +716,6 @@
                     </label>
                 </div>
                 
-                <!-- Closing Remarks -->
                 <div  data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-4">
                     <div class="p-4 text-center font-medium font-[Poppins]">16:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -766,7 +727,6 @@
                     </div>
                 </div>
                 
-                <!-- Drinks Reception -->
                 <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">16:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -774,7 +734,6 @@
                     </div>
                 </div>
                 
-                <!-- Dinner -->
                 <div data-aos="fade-up" class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">19:30</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -787,7 +746,6 @@
             </div>
         </div>
         
-        <!-- Legend -->
         <div  data-aos="fade-up" class="mt-8 bg-white rounded-2xl shadow-lg p-6">
             <h3 class="font-semibold text-gray-800 mb-3 font-[Poppins]">Schedule Legend</h3>
             <div class="flex flex-wrap gap-4">
@@ -813,7 +771,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Tab functionality
+
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
             
@@ -825,13 +783,11 @@
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     
-                    // Update contents
                     tabContents.forEach(content => content.classList.remove('active'));
                     document.getElementById(target).classList.add('active');
                 });
             });
             
-            // Session toggle functionality
             const sessionToggles = document.querySelectorAll('.session-toggle');
             
             sessionToggles.forEach(toggle => {

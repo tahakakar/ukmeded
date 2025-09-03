@@ -40,24 +40,20 @@
         }
     </script>
 </head>
-<body>
+<body class="bg-white overflow-x-hidden">
 <section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-  <!-- White background curves -->
-  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
-  <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
+  <div class="absolute bottom-[-100px] left-10/12 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
+  <div class="absolute bottom-[-100px] left-11/12 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
 
-  <!-- NAVBAR -->
   <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
 
-    <!-- Logo -->
     <div class="flex items-center">
       <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
         <img src="mainogo1.png" alt="">
       </div>
     </div>
 
-    <!-- Desktop Menu -->
     <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
       <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
@@ -67,7 +63,6 @@
       <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
     </ul>
 
-    <!-- Mobile Menu -->
     <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
       <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
@@ -80,10 +75,8 @@
       </li>
     </ul>
 
-    <!-- Register Button (Desktop) -->
     <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
 
-    <!-- Mobile Menu Button -->
     <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
   </nav>
 </section>
@@ -112,9 +105,8 @@
             <p class="text-gray-600 mt-2">Oct 15–16, 2025</p>
         </div>
 
-        <!-- Registration Cards -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
-            <!-- Delegate Registration -->
+          
             <div  data-aos="fade-left" class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border-t-4 border-primary">
                 <div class="p-8">
                     <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-6">
@@ -131,7 +123,6 @@
                 </div>
             </div>
 
-            <!-- Sponsor Registration -->
             <div  data-aos="fade-left"  class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border-t-4 border-primary">
                 <div class="p-8">
                     <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-6">
@@ -149,13 +140,11 @@
             </div>
         </div>
 
-        <!-- Policy Section -->
         <div  data-aos="fade-up"  class="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="p-1 bg-gradient-to-r from-primary to-secondary"></div>
             <div class="p-8">
                 <h3  data-aos="fade-left" class="text-2xl font-bold text-gray-800 mb-6">Event Information & Policies</h3>
                 
-                <!-- Catering Information -->
                 <div class="bg-blue-50 rounded-xl p-6 mb-8">
                     <div class="flex items-start">
                         <div class="flex-shrink-0">
@@ -170,7 +159,6 @@
                     </div>
                 </div>
                 
-                <!-- Policy Accordion -->
                 <div class="border border-gray-200 rounded-xl overflow-hidden">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden policy-toggle">
@@ -201,7 +189,6 @@
                     </label>
                 </div>
                 
-                <!-- Additional Information -->
                 <div class="mt-8 grid md:grid-cols-2 gap-6">
                     <div class="flex items-start">
                         <div class="flex-shrink-0">
@@ -243,7 +230,6 @@
             </div>
         </div>
 
-        <!-- Call to Action -->
         <div class="text-center mt-12">
             <h3  data-aos="fade-up" class="text-2xl font-bold text-gray-800 mb-4">Ready to Join Us?</h3>
             <p  data-aos="fade-up" class="text-gray-600 max-w-2xl mx-auto mb-8">
@@ -263,7 +249,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Policy toggle functionality
+          
             const policyToggles = document.querySelectorAll('.policy-toggle');
             
             policyToggles.forEach(toggle => {

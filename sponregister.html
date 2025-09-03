@@ -11,24 +11,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 </style>
 </head>
-<body>
+<body class="bg-white overflow-x-hidden">
    <section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-  <!-- White background curves -->
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
 
-  <!-- NAVBAR -->
   <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
 
-    <!-- Logo -->
     <div class="flex items-center">
       <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
         <img src="mainogo1.png" alt="">
       </div>
     </div>
 
-    <!-- Desktop Menu -->
     <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
       <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
@@ -38,7 +34,6 @@
       <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
     </ul>
 
-    <!-- Mobile Menu -->
     <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
       <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
@@ -51,10 +46,8 @@
       </li>
     </ul>
 
-    <!-- Register Button (Desktop) -->
     <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
 
-    <!-- Mobile Menu Button -->
     <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
   </nav>
 </section>
@@ -78,15 +71,14 @@
 </script>
 <section class="min-h-screen w-full max-w-[1260px] bg-[rgba(0,184,230,0.05)] rounded-[48px] mx-auto px-4 sm:px-6 py-16 mt-[60px] flex items-center justify-center font-[Poppins]">
  <div class="bg-white rounded-lg shadow-md w-full max-w-md">
-        <!-- Form Header -->
+     
         <div data-aos="fade-up" class="bg-blue-600 text-white p-6 rounded-t-lg">
             <h1 data-aos="fade-up" class="text-2xl font-bold">Register as a Sponser</h1>
             <p data-aos="fade-up" class="mt-2 text-blue-100">Please fill in all required fields marked with *</p>
         </div>
         
-        <!-- Registration Form -->
         <form class="p-6 space-y-4">
-            <!-- Name Field -->
+          
             <div data-aos="fade-up" >
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name <span class="text-red-600"> *</span></label>
                 <input 
@@ -98,7 +90,6 @@
                 >
             </div>
             
-            <!-- Hospital Field -->
             <div data-aos="fade-up" >
                 <label for="hospital" class="block text-sm font-medium text-gray-700 mb-1">Company<span class="text-red-600"> *</span></label>
                 <input 
@@ -110,7 +101,6 @@
                 >
             </div>
             
-            <!-- Delegation Field -->
             <div data-aos="fade-up" >
                 <label for="delegation" class="block text-sm font-medium text-gray-700 mb-1">Designation <span class="text-red-600"> *</span></label>
                 <input 
@@ -122,7 +112,6 @@
                 >
             </div>
             
-            <!-- Email Field -->
             <div data-aos="fade-up" >
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Official Email Address <span class="text-red-600"> *</span></label>
                 <input 
@@ -134,7 +123,6 @@
                 >
             </div>
             
-            <!-- Phone Field -->
             <div data-aos="fade-up" >
                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone<span class="text-red-600"> *</span></label>
                 <input 
@@ -146,7 +134,6 @@
                 >
             </div>
             
-            <!-- Country Field -->
             <div data-aos="fade-up" >
                 <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
                 <select 
@@ -157,11 +144,9 @@
                     <option value="us">United States</option>
                     <option value="uk">United Kingdom</option>
                     <option value="ca">Canada</option>
-                    <!-- More options would go here -->
                 </select>
             </div>
             
-            <!-- Attendance Field -->
             <div data-aos="fade-up" >
                 <label class="block text-sm font-medium text-gray-700 mb-2">Attendance <span class="text-red-600"> *</span></label>
                 <div class="space-y-2">
@@ -199,7 +184,6 @@
                 </div>
             </div>
             
-            <!-- Submit Button -->
             <div data-aos="fade-up" class="pt-4">
                 <button 
                     type="submit"

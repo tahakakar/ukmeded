@@ -45,24 +45,20 @@
         }
     </script>
 </head>
-<body>
+<body class="bg-white overflow-x-hidden">
 <section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-  <!-- White background curves -->
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
 
-  <!-- NAVBAR -->
   <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
 
-    <!-- Logo -->
     <div class="flex items-center">
       <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
         <img src="mainogo1.png" alt="">
       </div>
     </div>
 
-    <!-- Desktop Menu -->
     <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
       <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
@@ -72,7 +68,6 @@
       <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
     </ul>
 
-    <!-- Mobile Menu -->
     <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
       <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
@@ -85,10 +80,8 @@
       </li>
     </ul>
 
-    <!-- Register Button (Desktop) -->
     <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
 
-    <!-- Mobile Menu Button -->
     <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
   </nav>
 </section>
@@ -115,8 +108,6 @@
             <h2 class="text-3xl font-bold text-gray-800"><span class="text-blue-500">Orthopaedic Conference</span> Schedule</h2>
             <p class="text-gray-600 mt-2">Two days of learning and networking - Oct 15-16, 2025</p>
         </div>
-        
-        <!-- Day Tabs -->
         <div data-aos="fade-up" class="flex justify-center mb-8">
             <div class="inline-flex rounded-md shadow-sm" role="group">
                 <button type="button" class="tab-button py-2 px-6 text-sm font-medium rounded-l-lg border border-blue-500 active" data-day="day1">
@@ -128,16 +119,14 @@
             </div>
         </div>
         
-        <!-- Day 1 Content -->
         <div data-aos="fade-up" id="day1" class="tab-content active">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <!-- Header -->
+               
                 <div class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
                     <div class="p-4 text-center font-[Poppins]">Time</div>
                     <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
                 </div>
                 
-                <!-- Foot and Ankle Forum -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -155,7 +144,7 @@
                         </div>
                         <div data-aos="fade-up" class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                               
                                 <div class="mt-3">
                                     <h4 class="font-medium">09:00 - Lateral Ankle Instability: Current Concepts in Anatomy, Pathology, Clinical Assessment, and Radiological Investigation</h4>
                                     <p class="text-sm text-gray-600">Speaker: Dev Mahadevan, Consultant Orthopaedic Surgeon, Royal Berkshire NHS Foundation Trust</p>
@@ -199,7 +188,6 @@
                     </label>
                 </div>
                 
-                <!-- Networking Coffee Break -->
                 <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">11:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -207,7 +195,6 @@
                     </div>
                 </div>
                 
-                <!-- Elbow Instability Forum -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -225,7 +212,7 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                            
                                 <div class="mt-3">
                                     <h4 class="font-medium">11:30 - Elbow Anatomy</h4>
                                     <p class="text-sm text-gray-600">Speaker: Kishan Gokaraju, Consultant Orthopaedic Surgeon (Upper Limb), King's College Hospital NHS Foundation Trust, London</p>
@@ -258,7 +245,6 @@
                     </label>
                 </div>
                 
-                <!-- Lunch -->
                 <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">13:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -266,7 +252,6 @@
                     </div>
                 </div>
                 
-                <!-- Shoulder Session - Rotator Cuff Forum -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -284,7 +269,7 @@
                         </div>
                         <div data-aos="fade-up" class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
+                             
                                 <div class="mt-3">
                                     <h4 class="font-medium">14:00–14:15 - Anatomy, clinical assessment and investigations</h4>
                                     <p class="text-sm text-gray-600">Speaker: Nick Little, Consultant Orthopaedic Surgeon (Shoulder and Elbow), Epsom and St Helier NHS trust</p>
@@ -317,8 +302,6 @@
                         </div>
                     </label>
                 </div>
-                
-                <!-- Product Demonstration Workshop -->
                 <div data-aos="fade-up" class="grid grid-cols-5 hover:bg-blue-50 transition-colors session-type-3">
                     <div class="p-4 text-center font-medium font-[Poppins]">16:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -329,16 +312,14 @@
             </div>
         </div>
         
-        <!-- Day 2 Content -->
         <div data-aos="fade-up" id="day2" class="tab-content">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <!-- Header -->
+             
                 <div data-aos="fade-up" class="grid grid-cols-5 bg-blue-100 text-gray-800 font-semibold border-b border-gray-200">
                     <div class="p-4 text-center font-[Poppins]">Time</div>
                     <div class="p-4 text-center font-[Poppins] col-span-4">Session Details</div>
                 </div>
                 
-                <!-- Hip & Knee Session -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -358,7 +339,7 @@
                         </div>
                         <div data-aos="fade-up" class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Young Adult Hip -->
+                              
                                 <h4 class="font-semibold mt-4 text-blue-700">Young Adult Hip</h4>
                                 <div class="mt-3">
                                     <h4 class="font-medium">09:00 - FAI & Hip Arthroscopy</h4>
@@ -372,7 +353,6 @@
                                     <h4 class="font-medium">09:20 - 09:30 Q&A</h4>
                                 </div>
                                 
-                                <!-- Hip & Knee -->
                                 <h4 class="font-semibold mt-6 text-blue-700">Total Hip Arthroplasty and Periprosthetic Issues</h4>
                                 <div class="mt-3">
                                     <h4 class="font-medium">09:30 - Primary Total Hip Replacement</h4>
@@ -394,12 +374,10 @@
                                     <h4 class="font-medium">10:20 - 10:30 Q&A</h4>
                                 </div>
                                 
-                                <!-- Coffee Break -->
                                 <div class="mt-3 bg-green-50 p-2 rounded">
                                     <h4 class="font-medium">10:30 - 11:00 Coffee / Networking</h4>
                                 </div>
                                 
-                                <!-- Soft Tissue Knee Surgery -->
                                 <h4 class="font-semibold mt-6 text-blue-700">Soft Tissue Knee Surgery, Joint Preservation and Total Knee Replacement</h4>
                                 <div class="mt-3">
                                     <h4 class="font-medium">11:00 - ACL injury and ACL reconstruction</h4>
@@ -421,7 +399,6 @@
                                     <h4 class="font-medium">11:50 - 12:00 Q&A</h4>
                                 </div>
                                 
-                                <!-- Total Knee Replacement Forum -->
                                 <h4 class="font-semibold mt-6 text-blue-700">Total Knee Replacement Forum</h4>
                                 <div class="mt-3">
                                     <h4 class="font-medium">12:00 - Complex Primary Knee Replacement and Periprosthetic Fracture</h4>
@@ -446,8 +423,6 @@
                         </div>
                     </label>
                 </div>
-                
-                <!-- Lunch -->
                 <div data-aos="fade-up" class="grid grid-cols-5 border-b border-gray-100 hover:bg-blue-50 transition-colors session-type-2">
                     <div class="p-4 text-center font-medium font-[Poppins]">13:00</div>
                     <div class="p-4 col-span-4 font-[Poppins]">
@@ -455,7 +430,6 @@
                     </div>
                 </div>
                 
-                <!-- Hand Section -->
                 <div data-aos="fade-up" class="border-b border-gray-100">
                     <label class="cursor-pointer">
                         <input type="checkbox" class="hidden session-toggle">
@@ -473,7 +447,6 @@
                         </div>
                         <div class="session-details bg-blue-50">
                             <div class="px-4 pb-4 font-[Poppins] ml-20">
-                                <!-- Session items -->
                                 <div class="mt-3">
                                     <h4 class="font-medium">14:00 – Acute Traumatic Carpal Instability</h4>
                                     <p class="text-sm text-gray-600">Speaker: Mr Alex Bolt, Consultant Hand & Wrist Surgeon, University Hospital of Wales, Cardiff</p>
@@ -487,7 +460,6 @@
                                     <p class="text-sm text-gray-600">Speaker: Mr Magnus Arnander, Consultant Surgeon (Hand and Wrist) St Georges Hospital, London</p>
                                 </div>
                                 
-                                <!-- Coffee Break -->
                                 <div class="mt-3 bg-green-50 p-2 rounded">
                                     <h4 class="font-medium">15:00 – Networking Coffee Break</h4>
                                 </div>
@@ -515,7 +487,6 @@
             </div>
         </div>
         
-        <!-- Legend -->
         <div data-aos="fade-up" class="mt-8 bg-white rounded-2xl shadow-lg p-6">
             <h3 class="font-semibold text-gray-800 mb-3 font-[Poppins]">Schedule Legend</h3>
             <div class="flex flex-wrap gap-4">
@@ -541,7 +512,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Tab functionality
+           
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
             
@@ -549,17 +520,14 @@
                 button.addEventListener('click', () => {
                     const target = button.dataset.day;
                     
-                    // Update buttons
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     
-                    // Update contents
                     tabContents.forEach(content => content.classList.remove('active'));
                     document.getElementById(target).classList.add('active');
                 });
             });
             
-            // Session toggle functionality
             const sessionToggles = document.querySelectorAll('.session-toggle');
             
             sessionToggles.forEach(toggle => {

@@ -11,24 +11,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 </style>
 </head>
-<body>
+<body class="bg-white overflow-x-hidden">
 <section class="relative w-full max-w-[1260px] h-auto lg:h-[150px] min-h-[90px] mx-auto mt-[60px] rounded-[48px] overflow-hidden bg-blue-600 px-4 sm:px-6 flex items-center justify-center">
 
-  <!-- White background curves -->
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[879px] h-[200px] bg-white rounded-t-[100%] opacity-20"></div>
   <div class="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 w-[950px] h-[220px] bg-white rounded-t-[100%] opacity-20"></div>
 
-  <!-- NAVBAR -->
   <nav class="relative w-full h-[74px] rounded-full bg-white backdrop-blur-lg flex items-center justify-between px-6 z-20">
 
-    <!-- Logo -->
     <div class="flex items-center">
       <div class="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center text-blue-600 font-bold">
         <img src="mainogo1.png" alt="">
       </div>
     </div>
 
-    <!-- Desktop Menu -->
     <ul class="hidden md:flex md:space-x-8 md:text-white md:font-medium">
       <li><a href="index.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">About</a></li>
@@ -38,7 +34,6 @@
       <li><a href="contact.html" class="hover:text-blue-500 text-black uppercase cursor-pointer">Contact Us</a></li>
     </ul>
 
-    <!-- Mobile Menu -->
     <ul id="mobileMenu" class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-6 py-6 text-black font-medium rounded-b-2xl hidden z-50">
       <li><a href="index.html" class="hover:text-blue-500 uppercase">Home</a></li>
       <li><a href="about.html" class="hover:text-blue-500 uppercase">About</a></li>
@@ -51,10 +46,8 @@
       </li>
     </ul>
 
-    <!-- Register Button (Desktop) -->
     <a href="registerationpage.html" class="hidden md:flex bg-blue-600 h-[54px] justify-center items-center text-white px-6 rounded-full font-semibold hover:bg-transparent border border-blue-500 hover:text-blue-500 transition cursor-pointer">Register Now</a>
 
-    <!-- Mobile Menu Button -->
     <button id="menu-btn" class="md:hidden bg-blue-600 text-white p-3 rounded-full">☰</button>
   </nav>
 </section>
@@ -89,7 +82,7 @@
 
     <section class="w-full max-w-6xl mx-auto px-6 py-16 rounded-[48px] bg-[rgba(0,184,230,0.05)]">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Main Content -->
+       
             <div class="lg:col-span-2">
                 <h2  data-aos="fade-up"  class="text-3xl font-[Poppins] font-bold text-gray-800 mb-6">About the Conference</h2>
                 <p  data-aos="fade-up"  class="text-gray-700 font-[Poppins] mb-6">
@@ -165,7 +158,6 @@
                 </div>
             </div>
             
-            <!-- Sidebar -->
             <div  data-aos="fade-left"  class="bg-white rounded-2xl shadow-lg p-6 h-fit sticky top-6">
                 <h3 class="text-xl font-[Poppins] font-bold text-gray-800 mb-6 text-center ">Event Details</h3>
                 
@@ -342,7 +334,7 @@
         </div>
     </section>
    <section class="w-full max-w-[1260px] mx-auto px-6 py-16 mt-[60px] rounded-[48px] bg-[rgba(0,184,230,0.05)]">
-  <!-- Heading -->
+ 
   <div  data-aos="fade-up"  class="text-center mb-12">
     <h2 class="text-3xl font-bold font-[Poppins]">
       <span class="text-blue-500"> Our Valued </span> Sponsors
